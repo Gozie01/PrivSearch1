@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="470" viewBox="0 0 920 470">
+<style>
+text { font-family: Arial, sans-serif; fill: #1f2933; }
+.title { font-size: 18px; font-weight: 700; }
+.label { font-size: 12px; }
+.small { font-size: 11px; }
+.axisLabel { font-size: 12px; font-weight: 700; }
+.axis { stroke: #5b6570; stroke-width: 1; }
+</style>
+<text x="24" y="28" class="title">Figure 10. Healthcare Corpus Composition</text>
+<line x1="70" y1="70" x2="70" y2="320" class="axis" />
+<line x1="70" y1="320" x2="870" y2="320" class="axis" />
+<line x1="70" y1="320" x2="870" y2="320" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="324" text-anchor="end" class="small">0</text>
+<line x1="70" y1="257.5" x2="870" y2="257.5" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="261.5" text-anchor="end" class="small">44615</text>
+<line x1="70" y1="195" x2="870" y2="195" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="199" text-anchor="end" class="small">89231</text>
+<line x1="70" y1="132.5" x2="870" y2="132.5" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="136.5" text-anchor="end" class="small">133846</text>
+<line x1="70" y1="70" x2="870" y2="70" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="74" text-anchor="end" class="small">178461</text>
+<text x="203.33333333333334" y="344" text-anchor="middle" class="label">eICU demo</text>
+<rect x="185.33333333333334" y="179.0980662441654" width="32" height="140.9019337558346" fill="#2563eb" rx="3" />
+<text x="470" y="344" text-anchor="middle" class="label">MedCD</text>
+<rect x="452" y="317.19966827486115" width="32" height="2.800331725138826" fill="#2563eb" rx="3" />
+<text x="736.6666666666667" y="344" text-anchor="middle" class="label">openFDA</text>
+<rect x="718.6666666666667" y="70" width="32" height="250" fill="#2563eb" rx="3" />
+<rect x="80" y="408" width="14" height="14" fill="#2563eb" rx="2" />
+<text x="102" y="420" class="label">Records</text>
+<text x="470" y="370" text-anchor="middle" class="axisLabel">Healthcare source</text>
+<text x="22" y="195" text-anchor="middle" transform="rotate(-90 22 195)" class="axisLabel">Normalized records</text>
+</svg>

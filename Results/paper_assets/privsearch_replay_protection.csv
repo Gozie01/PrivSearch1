@@ -1,0 +1,2 @@
+attempted,accepted,rejected,header_failures,replay_rejection_rate,accepted_mean_ms,accepted_p95_ms,replay_mean_ms,replay_p95_ms
+200,200,200,0,1,581.4113070000002,1344.080399999999,0.7897265000001721,1.173399999999674

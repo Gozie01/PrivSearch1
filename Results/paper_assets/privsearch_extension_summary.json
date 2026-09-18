@@ -1,0 +1,1046 @@
+{
+  "generatedAt": "2026-07-08T08:50:21.107Z",
+  "privsearch_run_id": "enron_privsearch-prototype_2026-07-08T07-52-50-269Z",
+  "seacq_run_id": "seacq_comparison_privsearch-prototype_2026-07-08T05-34-54-786Z",
+  "workload_count": 436,
+  "trials_per_query": 100,
+  "summary_by_query_type": [
+    {
+      "query_type": "single_keyword",
+      "query_count": 150,
+      "mean_total_ms": 1.8911914199998747,
+      "mean_search_ms": 0.35825645333323625,
+      "mean_verify_ms": 1.5283967466666646,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "and_2",
+      "query_count": 40,
+      "mean_total_ms": 5.917338299999789,
+      "mean_search_ms": 0.025732500000012804,
+      "mean_verify_ms": 5.885610299999805,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "and_4",
+      "query_count": 20,
+      "mean_total_ms": 21.72784400000001,
+      "mean_search_ms": 0.032502349999325816,
+      "mean_verify_ms": 21.685047849999943,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "and_6",
+      "query_count": 20,
+      "mean_total_ms": 19.902235799999126,
+      "mean_search_ms": 0.02522405000029539,
+      "mean_verify_ms": 19.86567364999934,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "and_8",
+      "query_count": 20,
+      "mean_total_ms": 19.15818274999989,
+      "mean_search_ms": 0.028889549999643348,
+      "mean_verify_ms": 19.11453125000058,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "and_10",
+      "query_count": 20,
+      "mean_total_ms": 22.18218460000021,
+      "mean_search_ms": 0.02495854999939911,
+      "mean_verify_ms": 22.138873200000525,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "or_2",
+      "query_count": 40,
+      "mean_total_ms": 0.2913764749994298,
+      "mean_search_ms": 0.12635499999955938,
+      "mean_verify_ms": 0.1605021250000573,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "or_3",
+      "query_count": 20,
+      "mean_total_ms": 0.4475054999997374,
+      "mean_search_ms": 0.1973932000003406,
+      "mean_verify_ms": 0.24350349999943868,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "or_of_and",
+      "query_count": 20,
+      "mean_total_ms": 0.40421904999855907,
+      "mean_search_ms": 0.06400420000008308,
+      "mean_verify_ms": 0.3318143999994791,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "fuzzy_1",
+      "query_count": 24,
+      "mean_total_ms": 0.13738341666588286,
+      "mean_search_ms": 0.05378299999986969,
+      "mean_verify_ms": 0.08060441666651362,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "semantic_v1",
+      "query_count": 12,
+      "mean_total_ms": 2358.925170833335,
+      "mean_search_ms": 85.06420416666758,
+      "mean_verify_ms": 1037.5192375000006,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "range_month_1",
+      "query_count": 12,
+      "mean_total_ms": 12.014135250000301,
+      "mean_search_ms": 2.801539000000339,
+      "mean_verify_ms": 9.207366499999578,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "range_month_3",
+      "query_count": 10,
+      "mean_total_ms": 26.049988300000432,
+      "mean_search_ms": 6.777096199999564,
+      "mean_verify_ms": 19.257105900000724,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "range_month_6",
+      "query_count": 8,
+      "mean_total_ms": 21.521531375001576,
+      "mean_search_ms": 8.200294249999423,
+      "mean_verify_ms": 13.290254000001223,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "range_year_2",
+      "query_count": 6,
+      "mean_total_ms": 103.07740383333275,
+      "mean_search_ms": 35.0544708333341,
+      "mean_verify_ms": 67.99687999999946,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "range_year_3",
+      "query_count": 4,
+      "mean_total_ms": 33.2590144999999,
+      "mean_search_ms": 30.786944750000114,
+      "mean_verify_ms": 2.433363749999989,
+      "total_verification_failures": 0
+    },
+    {
+      "query_type": "range_year_5",
+      "query_count": 2,
+      "mean_total_ms": 56.480408500000195,
+      "mean_search_ms": 52.078700500004345,
+      "mean_verify_ms": 4.349636499998451,
+      "total_verification_failures": 0
+    }
+  ],
+  "replay_protection": {
+    "attempted": 200,
+    "accepted": 200,
+    "rejected": 200,
+    "headerFailures": 0,
+    "replayRejectionRate": 1,
+    "acceptedLatencyMs": {
+      "count": 200,
+      "mean": 19.296169000000017,
+      "p50": 8.302599999999984,
+      "p95": 15.17239999999947,
+      "min": 4.967400000000453,
+      "max": 626.4167000000002
+    },
+    "replayLatencyMs": {
+      "count": 200,
+      "mean": 0.8019185000000095,
+      "p50": 0.7644999999999982,
+      "p95": 1.2123000000001412,
+      "min": 0.4827000000004773,
+      "max": 1.4453000000003158
+    }
+  },
+  "seacq_comparison": [
+    {
+      "query_type": "and_10",
+      "privsearch_mean_search_ms": 0.03256239999986428,
+      "privsearch_mean_verify_ms": 0.7222633999996905,
+      "privsearch_mean_total_ms": 0.7741045999993367,
+      "seacq_published_search_ms": 14.5,
+      "seacq_published_verify_ms": 2350,
+      "seacq_published_total_ms": 2364.5
+    },
+    {
+      "query_type": "and_2",
+      "privsearch_mean_search_ms": 0.07378200000001016,
+      "privsearch_mean_verify_ms": 0.21423119999999835,
+      "privsearch_mean_total_ms": 0.295522200000014,
+      "seacq_published_search_ms": 15.5,
+      "seacq_published_verify_ms": 2300,
+      "seacq_published_total_ms": 2315.5
+    },
+    {
+      "query_type": "and_4",
+      "privsearch_mean_search_ms": 0.08506819999999425,
+      "privsearch_mean_verify_ms": 0.360020600000018,
+      "privsearch_mean_total_ms": 0.4554324000001143,
+      "seacq_published_search_ms": 15,
+      "seacq_published_verify_ms": 2250,
+      "seacq_published_total_ms": 2265
+    },
+    {
+      "query_type": "and_6",
+      "privsearch_mean_search_ms": 0.061962200000220034,
+      "privsearch_mean_verify_ms": 0.4435702000001839,
+      "privsearch_mean_total_ms": 0.5222800000003263,
+      "seacq_published_search_ms": 15,
+      "seacq_published_verify_ms": 2250,
+      "seacq_published_total_ms": 2265
+    },
+    {
+      "query_type": "and_8",
+      "privsearch_mean_search_ms": 0.04228240000001097,
+      "privsearch_mean_verify_ms": 0.5290791999999638,
+      "privsearch_mean_total_ms": 0.5943669999998675,
+      "seacq_published_search_ms": 14.5,
+      "seacq_published_verify_ms": 2300,
+      "seacq_published_total_ms": 2314.5
+    }
+  ],
+  "semantic_run_id": "enron_privsearch-prototype_2026-07-08T08-47-42-701Z",
+  "distributed_validation_wan": [
+    {
+      "profile": "lan",
+      "profileLabel": "LAN",
+      "configuredDelayMs": 2,
+      "configuredJitterMs": 1,
+      "configuredFailureRate": 0,
+      "nodeCount": 2,
+      "thresholdFraction": 0.51,
+      "thresholdSignaturesRequired": 2,
+      "txPerBlock": 50,
+      "trials": 5,
+      "successRate": 1,
+      "blockBuildMs": {
+        "count": 5,
+        "mean": 0.8614999999999782,
+        "p50": 0.6690999999998439,
+        "p95": 1.2358000000000402,
+        "min": 0.5625,
+        "max": 1.2358000000000402
+      },
+      "thresholdSignatureCollectionMs": {
+        "count": 5,
+        "mean": 20.59154000000001,
+        "p50": 12.47339999999997,
+        "p95": 62.140100000000075,
+        "min": 5.224799999999959,
+        "max": 62.140100000000075
+      },
+      "fullSignatureCollectionMs": {
+        "count": 5,
+        "mean": 11.534459999999967,
+        "p50": 14.562599999999975,
+        "p95": 15.592999999999847,
+        "min": 3.837699999999927,
+        "max": 15.592999999999847
+      },
+      "thresholdVerificationMs": {
+        "count": 5,
+        "mean": 0.4798400000000356,
+        "p50": 0.4355000000000473,
+        "p95": 0.6897000000000162,
+        "min": 0.3908000000001266,
+        "max": 0.6897000000000162
+      },
+      "fullVerificationMs": {
+        "count": 5,
+        "mean": 0.33096000000002734,
+        "p50": 0.31349999999997635,
+        "p95": 0.4550000000000409,
+        "min": 0.2794000000001233,
+        "max": 0.4550000000000409
+      },
+      "endToEndThresholdMs": {
+        "count": 5,
+        "mean": 21.932880000000022,
+        "p50": 14.111899999999878,
+        "p95": 64.06560000000013,
+        "min": 6.28469999999993,
+        "max": 64.06560000000013
+      },
+      "endToEndFullMs": {
+        "count": 5,
+        "mean": 12.726919999999973,
+        "p50": 15.411599999999908,
+        "p95": 16.541499999999814,
+        "min": 5.386999999999944,
+        "max": 16.541499999999814
+      }
+    },
+    {
+      "profile": "lan",
+      "profileLabel": "LAN",
+      "configuredDelayMs": 2,
+      "configuredJitterMs": 1,
+      "configuredFailureRate": 0,
+      "nodeCount": 4,
+      "thresholdFraction": 0.51,
+      "thresholdSignaturesRequired": 3,
+      "txPerBlock": 50,
+      "trials": 5,
+      "successRate": 1,
+      "blockBuildMs": {
+        "count": 5,
+        "mean": 0.5494000000000596,
+        "p50": 0.5150000000001,
+        "p95": 0.6979000000001179,
+        "min": 0.47050000000012915,
+        "max": 0.6979000000001179
+      },
+      "thresholdSignatureCollectionMs": {
+        "count": 5,
+        "mean": 15.384999999999945,
+        "p50": 13.624099999999999,
+        "p95": 26.235599999999977,
+        "min": 10.061500000000024,
+        "max": 26.235599999999977
+      },
+      "fullSignatureCollectionMs": {
+        "count": 5,
+        "mean": 12.638720000000058,
+        "p50": 14.915300000000116,
+        "p95": 15.587400000000116,
+        "min": 2.796500000000151,
+        "max": 15.587400000000116
+      },
+      "thresholdVerificationMs": {
+        "count": 5,
+        "mean": 0.6488400000000183,
+        "p50": 0.672800000000052,
+        "p95": 0.7394999999999072,
+        "min": 0.4700000000000273,
+        "max": 0.7394999999999072
+      },
+      "fullVerificationMs": {
+        "count": 5,
+        "mean": 0.8481999999999517,
+        "p50": 0.7649999999998727,
+        "p95": 1.1765000000000327,
+        "min": 0.7322999999998956,
+        "max": 1.1765000000000327
+      },
+      "endToEndThresholdMs": {
+        "count": 5,
+        "mean": 16.583240000000025,
+        "p50": 14.852800000000116,
+        "p95": 27.39390000000003,
+        "min": 11.085000000000036,
+        "max": 27.39390000000003
+      },
+      "endToEndFullMs": {
+        "count": 5,
+        "mean": 14.03632000000007,
+        "p50": 16.252700000000004,
+        "p95": 16.81710000000021,
+        "min": 4.226700000000164,
+        "max": 16.81710000000021
+      }
+    },
+    {
+      "profile": "lan",
+      "profileLabel": "LAN",
+      "configuredDelayMs": 2,
+      "configuredJitterMs": 1,
+      "configuredFailureRate": 0,
+      "nodeCount": 7,
+      "thresholdFraction": 0.51,
+      "thresholdSignaturesRequired": 4,
+      "txPerBlock": 50,
+      "trials": 5,
+      "successRate": 1,
+      "blockBuildMs": {
+        "count": 5,
+        "mean": 0.5001200000000153,
+        "p50": 0.4713000000001557,
+        "p95": 0.6416999999999007,
+        "min": 0.421100000000024,
+        "max": 0.6416999999999007
+      },
+      "thresholdSignatureCollectionMs": {
+        "count": 5,
+        "mean": 14.838660000000072,
+        "p50": 12.663400000000138,
+        "p95": 23.817400000000134,
+        "min": 12.227200000000039,
+        "max": 23.817400000000134
+      },
+      "fullSignatureCollectionMs": {
+        "count": 5,
+        "mean": 14.735599999999977,
+        "p50": 14.645999999999958,
+        "p95": 15.539199999999937,
+        "min": 14.19990000000007,
+        "max": 15.539199999999937
+      },
+      "thresholdVerificationMs": {
+        "count": 5,
+        "mean": 0.9534000000000106,
+        "p50": 0.9336000000000695,
+        "p95": 1.0588000000000193,
+        "min": 0.8755000000001019,
+        "max": 1.0588000000000193
+      },
+      "fullVerificationMs": {
+        "count": 5,
+        "mean": 2.002539999999999,
+        "p50": 1.990199999999959,
+        "p95": 2.0585000000000946,
+        "min": 1.9622999999999138,
+        "max": 2.0585000000000946
+      },
+      "endToEndThresholdMs": {
+        "count": 5,
+        "mean": 16.292180000000098,
+        "p50": 14.086700000000064,
+        "p95": 25.454799999999977,
+        "min": 13.630800000000363,
+        "max": 25.454799999999977
+      },
+      "endToEndFullMs": {
+        "count": 5,
+        "mean": 17.23825999999999,
+        "p50": 17.174099999999953,
+        "p95": 17.972800000000007,
+        "min": 16.657900000000154,
+        "max": 17.972800000000007
+      }
+    },
+    {
+      "profile": "lan",
+      "profileLabel": "LAN",
+      "configuredDelayMs": 2,
+      "configuredJitterMs": 1,
+      "configuredFailureRate": 0,
+      "nodeCount": 10,
+      "thresholdFraction": 0.51,
+      "thresholdSignaturesRequired": 6,
+      "txPerBlock": 50,
+      "trials": 5,
+      "successRate": 1,
+      "blockBuildMs": {
+        "count": 5,
+        "mean": 0.4522000000000389,
+        "p50": 0.4497000000001208,
+        "p95": 0.4875999999999294,
+        "min": 0.42679999999995744,
+        "max": 0.4875999999999294
+      },
+      "thresholdSignatureCollectionMs": {
+        "count": 5,
+        "mean": 13.206140000000005,
+        "p50": 10.53729999999996,
+        "p95": 22.77480000000014,
+        "min": 9.126200000000154,
+        "max": 22.77480000000014
+      },
+      "fullSignatureCollectionMs": {
+        "count": 5,
+        "mean": 13.484799999999996,
+        "p50": 13.815700000000106,
+        "p95": 14.479899999999816,
+        "min": 11.482500000000073,
+        "max": 14.479899999999816
+      },
+      "thresholdVerificationMs": {
+        "count": 5,
+        "mean": 1.8821400000000268,
+        "p50": 1.8238000000001193,
+        "p95": 2.126700000000028,
+        "min": 1.682399999999916,
+        "max": 2.126700000000028
+      },
+      "fullVerificationMs": {
+        "count": 5,
+        "mean": 3.9146600000000036,
+        "p50": 3.6702000000000226,
+        "p95": 4.451199999999972,
+        "min": 3.590400000000045,
+        "max": 4.451199999999972
+      },
+      "endToEndThresholdMs": {
+        "count": 5,
+        "mean": 15.54048000000007,
+        "p50": 12.690900000000283,
+        "p95": 25.08620000000019,
+        "min": 11.647300000000087,
+        "max": 25.08620000000019
+      },
+      "endToEndFullMs": {
+        "count": 5,
+        "mean": 17.851660000000038,
+        "p50": 18.393099999999777,
+        "p95": 19.156799999999976,
+        "min": 15.532900000000154,
+        "max": 19.156799999999976
+      }
+    },
+    {
+      "profile": "regional",
+      "profileLabel": "Regional WAN",
+      "configuredDelayMs": 30,
+      "configuredJitterMs": 8,
+      "configuredFailureRate": 0.01,
+      "nodeCount": 2,
+      "thresholdFraction": 0.51,
+      "thresholdSignaturesRequired": 2,
+      "txPerBlock": 50,
+      "trials": 5,
+      "successRate": 1,
+      "blockBuildMs": {
+        "count": 5,
+        "mean": 0.500460000000021,
+        "p50": 0.4532000000001517,
+        "p95": 0.7145999999997912,
+        "min": 0.42990000000008877,
+        "max": 0.7145999999997912
+      },
+      "thresholdSignatureCollectionMs": {
+        "count": 5,
+        "mean": 42.66162000000004,
+        "p50": 45.206899999999905,
+        "p95": 50.421800000000076,
+        "min": 28.68419999999992,
+        "max": 50.421800000000076
+      },
+      "fullSignatureCollectionMs": {
+        "count": 5,
+        "mean": 39.65039999999995,
+        "p50": 45.7808,
+        "p95": 46.78399999999988,
+        "min": 29.662399999999934,
+        "max": 46.78399999999988
+      },
+      "thresholdVerificationMs": {
+        "count": 5,
+        "mean": 0.283199999999988,
+        "p50": 0.2807999999999993,
+        "p95": 0.3167999999998301,
+        "min": 0.26089999999999236,
+        "max": 0.3167999999998301
+      },
+      "fullVerificationMs": {
+        "count": 5,
+        "mean": 0.33011999999994257,
+        "p50": 0.28139999999984866,
+        "p95": 0.5096999999998388,
+        "min": 0.25919999999996435,
+        "max": 0.5096999999998388
+      },
+      "endToEndThresholdMs": {
+        "count": 5,
+        "mean": 43.44528000000005,
+        "p50": 45.94920000000002,
+        "p95": 51.126700000000255,
+        "min": 29.659699999999702,
+        "max": 51.126700000000255
+      },
+      "endToEndFullMs": {
+        "count": 5,
+        "mean": 40.48097999999991,
+        "p50": 46.51119999999992,
+        "p95": 47.52859999999987,
+        "min": 30.39560000000006,
+        "max": 47.52859999999987
+      }
+    },
+    {
+      "profile": "regional",
+      "profileLabel": "Regional WAN",
+      "configuredDelayMs": 30,
+      "configuredJitterMs": 8,
+      "configuredFailureRate": 0.01,
+      "nodeCount": 4,
+      "thresholdFraction": 0.51,
+      "thresholdSignaturesRequired": 3,
+      "txPerBlock": 50,
+      "trials": 5,
+      "successRate": 1,
+      "blockBuildMs": {
+        "count": 5,
+        "mean": 0.570759999999973,
+        "p50": 0.5243000000000393,
+        "p95": 0.862999999999829,
+        "min": 0.41069999999990614,
+        "max": 0.862999999999829
+      },
+      "thresholdSignatureCollectionMs": {
+        "count": 5,
+        "mean": 40.43197999999984,
+        "p50": 42.70679999999993,
+        "p95": 43.88979999999992,
+        "min": 29.766799999999876,
+        "max": 43.88979999999992
+      },
+      "fullSignatureCollectionMs": {
+        "count": 5,
+        "mean": 45.530239999999864,
+        "p50": 45.50279999999975,
+        "p95": 46.4052999999999,
+        "min": 44.67679999999973,
+        "max": 46.4052999999999
+      },
+      "thresholdVerificationMs": {
+        "count": 5,
+        "mean": 0.6712199999999029,
+        "p50": 0.6232999999997446,
+        "p95": 0.9277999999999338,
+        "min": 0.5641999999998006,
+        "max": 0.9277999999999338
+      },
+      "fullVerificationMs": {
+        "count": 5,
+        "mean": 0.8408000000000356,
+        "p50": 0.7898999999997613,
+        "p95": 1.1085000000002765,
+        "min": 0.6819000000000415,
+        "max": 1.1085000000002765
+      },
+      "endToEndThresholdMs": {
+        "count": 5,
+        "mean": 41.67395999999972,
+        "p50": 43.823199999999815,
+        "p95": 45.16889999999967,
+        "min": 30.800799999999526,
+        "max": 45.16889999999967
+      },
+      "endToEndFullMs": {
+        "count": 5,
+        "mean": 46.94179999999987,
+        "p50": 46.81949999999961,
+        "p95": 47.8131999999996,
+        "min": 46.2216999999996,
+        "max": 47.8131999999996
+      }
+    },
+    {
+      "profile": "regional",
+      "profileLabel": "Regional WAN",
+      "configuredDelayMs": 30,
+      "configuredJitterMs": 8,
+      "configuredFailureRate": 0.01,
+      "nodeCount": 7,
+      "thresholdFraction": 0.51,
+      "thresholdSignaturesRequired": 4,
+      "txPerBlock": 50,
+      "trials": 5,
+      "successRate": 1,
+      "blockBuildMs": {
+        "count": 5,
+        "mean": 0.4965600000002269,
+        "p50": 0.46030000000018845,
+        "p95": 0.6209000000003471,
+        "min": 0.42570000000023356,
+        "max": 0.6209000000003471
+      },
+      "thresholdSignatureCollectionMs": {
+        "count": 5,
+        "mean": 39.973240000000075,
+        "p50": 42.709699999999884,
+        "p95": 43.07980000000043,
+        "min": 29.21230000000014,
+        "max": 43.07980000000043
+      },
+      "fullSignatureCollectionMs": {
+        "count": 5,
+        "mean": 45.251280000000044,
+        "p50": 45.57860000000028,
+        "p95": 46.00280000000021,
+        "min": 44.32510000000002,
+        "max": 46.00280000000021
+      },
+      "thresholdVerificationMs": {
+        "count": 5,
+        "mean": 1.0470600000000558,
+        "p50": 1.0785000000000764,
+        "p95": 1.3359000000000378,
+        "min": 0.7581999999997606,
+        "max": 1.3359000000000378
+      },
+      "fullVerificationMs": {
+        "count": 5,
+        "mean": 2.246679999999924,
+        "p50": 2.3398999999999432,
+        "p95": 2.7088999999996304,
+        "min": 1.7989999999999782,
+        "max": 2.7088999999996304
+      },
+      "endToEndThresholdMs": {
+        "count": 5,
+        "mean": 41.516860000000364,
+        "p50": 44.09190000000035,
+        "p95": 44.779200000000856,
+        "min": 30.976400000000467,
+        "max": 44.779200000000856
+      },
+      "endToEndFullMs": {
+        "count": 5,
+        "mean": 47.99452000000019,
+        "p50": 48.20580000000018,
+        "p95": 48.7478000000001,
+        "min": 47.09320000000025,
+        "max": 48.7478000000001
+      }
+    },
+    {
+      "profile": "regional",
+      "profileLabel": "Regional WAN",
+      "configuredDelayMs": 30,
+      "configuredJitterMs": 8,
+      "configuredFailureRate": 0.01,
+      "nodeCount": 10,
+      "thresholdFraction": 0.51,
+      "thresholdSignaturesRequired": 6,
+      "txPerBlock": 50,
+      "trials": 5,
+      "successRate": 1,
+      "blockBuildMs": {
+        "count": 5,
+        "mean": 0.4326199999999517,
+        "p50": 0.4278999999996813,
+        "p95": 0.469300000000203,
+        "min": 0.4032999999999447,
+        "max": 0.469300000000203
+      },
+      "thresholdSignatureCollectionMs": {
+        "count": 5,
+        "mean": 43.92118000000001,
+        "p50": 42.37920000000031,
+        "p95": 52.11709999999994,
+        "min": 40.71589999999969,
+        "max": 52.11709999999994
+      },
+      "fullSignatureCollectionMs": {
+        "count": 5,
+        "mean": 44.59168000000009,
+        "p50": 44.596700000000055,
+        "p95": 45.05619999999999,
+        "min": 44.200900000000274,
+        "max": 45.05619999999999
+      },
+      "thresholdVerificationMs": {
+        "count": 5,
+        "mean": 2.0552200000000083,
+        "p50": 1.9861000000000786,
+        "p95": 2.4173000000000684,
+        "min": 1.6550000000002,
+        "max": 2.4173000000000684
+      },
+      "fullVerificationMs": {
+        "count": 5,
+        "mean": 3.5117600000000495,
+        "p50": 3.4978000000000975,
+        "p95": 3.5844999999999345,
+        "min": 3.4657999999999447,
+        "max": 3.5844999999999345
+      },
+      "endToEndThresholdMs": {
+        "count": 5,
+        "mean": 46.40901999999996,
+        "p50": 44.94360000000006,
+        "p95": 54.440799999999854,
+        "min": 43.549499999999625,
+        "max": 54.440799999999854
+      },
+      "endToEndFullMs": {
+        "count": 5,
+        "mean": 48.53606000000009,
+        "p50": 48.4978000000001,
+        "p95": 48.99130000000014,
+        "min": 48.119300000000294,
+        "max": 48.99130000000014
+      }
+    },
+    {
+      "profile": "wan",
+      "profileLabel": "Cross-Site WAN",
+      "configuredDelayMs": 85,
+      "configuredJitterMs": 20,
+      "configuredFailureRate": 0.02,
+      "nodeCount": 2,
+      "thresholdFraction": 0.51,
+      "thresholdSignaturesRequired": 2,
+      "txPerBlock": 50,
+      "trials": 5,
+      "successRate": 1,
+      "blockBuildMs": {
+        "count": 5,
+        "mean": 0.5597200000000158,
+        "p50": 0.5720000000001164,
+        "p95": 0.6855000000000473,
+        "min": 0.41349999999965803,
+        "max": 0.6855000000000473
+      },
+      "thresholdSignatureCollectionMs": {
+        "count": 5,
+        "mean": 95.49073999999992,
+        "p50": 90.83909999999969,
+        "p95": 113.56869999999981,
+        "min": 77.38889999999992,
+        "max": 113.56869999999981
+      },
+      "fullSignatureCollectionMs": {
+        "count": 5,
+        "mean": 92.02943999999998,
+        "p50": 90.96420000000035,
+        "p95": 106.80189999999993,
+        "min": 78.82169999999996,
+        "max": 106.80189999999993
+      },
+      "thresholdVerificationMs": {
+        "count": 5,
+        "mean": 0.30034000000005107,
+        "p50": 0.29559999999992215,
+        "p95": 0.35140000000001237,
+        "min": 0.24699999999984357,
+        "max": 0.35140000000001237
+      },
+      "fullVerificationMs": {
+        "count": 5,
+        "mean": 0.28652000000001865,
+        "p50": 0.2508000000007087,
+        "p95": 0.34480000000030486,
+        "min": 0.24199999999927968,
+        "max": 0.34480000000030486
+      },
+      "endToEndThresholdMs": {
+        "count": 5,
+        "mean": 96.35079999999998,
+        "p50": 91.64289999999983,
+        "p95": 114.43629999999985,
+        "min": 78.08259999999973,
+        "max": 114.43629999999985
+      },
+      "endToEndFullMs": {
+        "count": 5,
+        "mean": 92.87568000000002,
+        "p50": 91.92530000000033,
+        "p95": 107.71810000000005,
+        "min": 79.75799999999981,
+        "max": 107.71810000000005
+      }
+    },
+    {
+      "profile": "wan",
+      "profileLabel": "Cross-Site WAN",
+      "configuredDelayMs": 85,
+      "configuredJitterMs": 20,
+      "configuredFailureRate": 0.02,
+      "nodeCount": 4,
+      "thresholdFraction": 0.51,
+      "thresholdSignaturesRequired": 3,
+      "txPerBlock": 50,
+      "trials": 5,
+      "successRate": 1,
+      "blockBuildMs": {
+        "count": 5,
+        "mean": 0.4722799999999552,
+        "p50": 0.4404999999997017,
+        "p95": 0.6262000000006083,
+        "min": 0.39949999999953434,
+        "max": 0.6262000000006083
+      },
+      "thresholdSignatureCollectionMs": {
+        "count": 5,
+        "mean": 83.51422000000002,
+        "p50": 88.8753999999999,
+        "p95": 90.36959999999999,
+        "min": 73.65549999999985,
+        "max": 90.36959999999999
+      },
+      "fullSignatureCollectionMs": {
+        "count": 5,
+        "mean": 101.10853999999999,
+        "p50": 104.89480000000003,
+        "p95": 107.76249999999982,
+        "min": 92.19980000000032,
+        "max": 107.76249999999982
+      },
+      "thresholdVerificationMs": {
+        "count": 5,
+        "mean": 0.6449399999997695,
+        "p50": 0.5923999999995431,
+        "p95": 0.8432000000002517,
+        "min": 0.49909999999999854,
+        "max": 0.8432000000002517
+      },
+      "fullVerificationMs": {
+        "count": 5,
+        "mean": 0.7980399999998553,
+        "p50": 0.7422999999998865,
+        "p95": 1.0976000000000568,
+        "min": 0.6871999999993932,
+        "max": 1.0976000000000568
+      },
+      "endToEndThresholdMs": {
+        "count": 5,
+        "mean": 84.63143999999974,
+        "p50": 90.10479999999916,
+        "p95": 91.6860000000006,
+        "min": 74.55609999999888,
+        "max": 91.6860000000006
+      },
+      "endToEndFullMs": {
+        "count": 5,
+        "mean": 102.3788599999998,
+        "p50": 106.43289999999979,
+        "p95": 108.97829999999976,
+        "min": 93.36009999999987,
+        "max": 108.97829999999976
+      }
+    },
+    {
+      "profile": "wan",
+      "profileLabel": "Cross-Site WAN",
+      "configuredDelayMs": 85,
+      "configuredJitterMs": 20,
+      "configuredFailureRate": 0.02,
+      "nodeCount": 7,
+      "thresholdFraction": 0.51,
+      "thresholdSignaturesRequired": 4,
+      "txPerBlock": 50,
+      "trials": 5,
+      "successRate": 1,
+      "blockBuildMs": {
+        "count": 5,
+        "mean": 0.5887399999999616,
+        "p50": 0.5997999999999593,
+        "p95": 0.7174000000004526,
+        "min": 0.37120000000049913,
+        "max": 0.7174000000004526
+      },
+      "thresholdSignatureCollectionMs": {
+        "count": 5,
+        "mean": 95.29055999999964,
+        "p50": 91.32739999999922,
+        "p95": 105.51749999999993,
+        "min": 86.1246999999994,
+        "max": 105.51749999999993
+      },
+      "fullSignatureCollectionMs": {
+        "count": 5,
+        "mean": 106.89428000000007,
+        "p50": 107.52930000000015,
+        "p95": 119.91700000000037,
+        "min": 92.07110000000011,
+        "max": 119.91700000000037
+      },
+      "thresholdVerificationMs": {
+        "count": 5,
+        "mean": 1.0959599999998317,
+        "p50": 0.9230999999999767,
+        "p95": 1.7101999999995314,
+        "min": 0.7672999999995227,
+        "max": 1.7101999999995314
+      },
+      "fullVerificationMs": {
+        "count": 5,
+        "mean": 2.2460000000000946,
+        "p50": 1.9481999999998152,
+        "p95": 3.0567000000000917,
+        "min": 1.9038000000000466,
+        "max": 3.0567000000000917
+      },
+      "endToEndThresholdMs": {
+        "count": 5,
+        "mean": 96.97525999999944,
+        "p50": 93.23670000000038,
+        "p95": 106.98839999999927,
+        "min": 88.54239999999845,
+        "max": 106.98839999999927
+      },
+      "endToEndFullMs": {
+        "count": 5,
+        "mean": 109.72902000000013,
+        "p50": 110.15050000000065,
+        "p95": 123.03790000000026,
+        "min": 95.67559999999958,
+        "max": 123.03790000000026
+      }
+    },
+    {
+      "profile": "wan",
+      "profileLabel": "Cross-Site WAN",
+      "configuredDelayMs": 85,
+      "configuredJitterMs": 20,
+      "configuredFailureRate": 0.02,
+      "nodeCount": 10,
+      "thresholdFraction": 0.51,
+      "thresholdSignaturesRequired": 6,
+      "txPerBlock": 50,
+      "trials": 5,
+      "successRate": 1,
+      "blockBuildMs": {
+        "count": 5,
+        "mean": 0.4597399999996924,
+        "p50": 0.4388999999991938,
+        "p95": 0.5532999999995809,
+        "min": 0.37820000000010623,
+        "max": 0.5532999999995809
+      },
+      "thresholdSignatureCollectionMs": {
+        "count": 5,
+        "mean": 93.66500000000015,
+        "p50": 89.92149999999947,
+        "p95": 106.51829999999973,
+        "min": 86.33200000000033,
+        "max": 106.51829999999973
+      },
+      "fullSignatureCollectionMs": {
+        "count": 5,
+        "mean": 124.65845999999983,
+        "p50": 107.41380000000026,
+        "p95": 184.46799999999985,
+        "min": 107.0028000000002,
+        "max": 184.46799999999985
+      },
+      "thresholdVerificationMs": {
+        "count": 5,
+        "mean": 2.179160000000047,
+        "p50": 2.1296999999995023,
+        "p95": 2.897399999999834,
+        "min": 1.6751000000003842,
+        "max": 2.897399999999834
+      },
+      "fullVerificationMs": {
+        "count": 5,
+        "mean": 4.167180000000007,
+        "p50": 3.7416999999995824,
+        "p95": 5.325200000000223,
+        "min": 3.5992999999998574,
+        "max": 5.325200000000223
+      },
+      "endToEndThresholdMs": {
+        "count": 5,
+        "mean": 96.30389999999989,
+        "p50": 92.03549999999905,
+        "p95": 109.11380000000008,
+        "min": 89.77409999999963,
+        "max": 109.11380000000008
+      },
+      "endToEndFullMs": {
+        "count": 5,
+        "mean": 129.28537999999952,
+        "p50": 113.17789999999968,
+        "p95": 188.62059999999929,
+        "min": 111.1280999999999,
+        "max": 188.62059999999929
+      }
+    }
+  ]
+}

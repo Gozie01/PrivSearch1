@@ -1,0 +1,12 @@
+metric,value
+run_id,healthcare_privsearch-prototype_2026-07-09T05-11-24-879Z
+workload_count,258
+trials_per_query,10
+total_records,281042
+weighted_mean_total_ms,38.93250174418612
+weighted_mean_search_ms,5.185688565891575
+weighted_mean_verify_ms,33.41746519379854
+weighted_mean_setup_ms,0.3293479844960078
+weighted_mean_auth_overhead_ms,33.746813178294545
+weighted_auth_share_pct,73.97710958713583
+verification_failures,0

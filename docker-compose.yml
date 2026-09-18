@@ -1,0 +1,92 @@
+version: '3.9'
+
+services:
+  # ── MongoDB ───────────────────────────────────────────────────
+  mongodb:
+    image: mongo:7
+    container_name: lifedb-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-changeme}
+      MONGO_INITDB_DATABASE: lifedb
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - lifedb-net
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── MinIO (S3-compatible blob store) ─────────────────────────
+  minio:
+    image: minio/minio:latest
+    container_name: lifedb-minio
+    restart: unless-stopped
+    ports:
+      - "9000:9000"   # S3 API
+      - "9001:9001"   # Web console
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:-minioadmin}
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio_data:/data
+    networks:
+      - lifedb-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── IPFS / Kubo (decentralized content-addressed storage) ──
+  ipfs:
+    image: ipfs/kubo:latest
+    container_name: lifedb-ipfs
+    restart: unless-stopped
+    ports:
+      - "4001:4001"
+      - "4001:4001/udp"
+      - "5001:5001"
+      - "8080:8080"
+    environment:
+      IPFS_PROFILE: server
+    volumes:
+      - ipfs_data:/data/ipfs
+    networks:
+      - lifedb-net
+    healthcheck:
+      test: ["CMD-SHELL", "ipfs id >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # ── LifeDB API (optional — uncomment to containerise the app) ─
+  # app:
+  #   build: .
+  #   container_name: lifedb-api
+  #   restart: unless-stopped
+  #   ports:
+  #     - "3000:3000"
+  #   env_file: .env
+  #   depends_on:
+  #     mongodb:
+  #       condition: service_healthy
+  #     minio:
+  #       condition: service_healthy
+  #   networks:
+  #     - lifedb-net
+
+volumes:
+  mongo_data:
+  minio_data:
+  ipfs_data:
+
+networks:
+  lifedb-net:
+    driver: bridge

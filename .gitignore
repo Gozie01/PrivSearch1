@@ -1,0 +1,32 @@
+﻿# Node.js
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+
+# Large raw datasets (download separately — see DATA_SOURCES.md)
+NweDB/healthcare/inverted_index/
+NweDB/healthcare/keywords/
+NweDB/healthcare/combined/
+NweDB/healthcare/eicu_demo/
+NweDB/healthcare/medcd/
+NweDB/openfda/*.csv
+NweDB/openfda/*.jsonl
+NweDB/enron_inverted_index/
+NweDB/enron_keywords/
+NweDB/enron_processed/
+NweDB/enron_mail_20150507/
+NweDB/benchmark_runs/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+
+# OS
+.DS_Store
+Thumbs.db

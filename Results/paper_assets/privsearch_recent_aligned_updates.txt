@@ -1,0 +1,148 @@
+# PrivSearch Recent Aligned Updates
+
+Updated: 2026-07-16
+
+This note collects the most recent PrivSearch experimental and manuscript updates in one place after the aligned reruns and statistical-rigor refresh.
+
+## 1. What Was Updated
+
+The recent update cycle completed the following:
+
+1. reran the Enron PrivSearch benchmark with `100` trials per workload and raw per-trial persistence enabled
+2. reran the healthcare PrivSearch benchmark with `100` trials per workload and raw per-trial persistence enabled
+3. regenerated the statistical-rigor summary using the aligned Enron and healthcare benchmark archives
+4. updated the PrivSearch manuscript so the abstract, evaluation, statistical-rigor section, SeaCQ comparison table, conclusion, and artifact references all reflect the aligned reruns
+
+## 2. Canonical Artifacts
+
+### Benchmark archives
+
+1. `NweDB/benchmark_runs/enron_privsearch-prototype_2026-07-15T07-12-46-002Z/`
+2. `NweDB/benchmark_runs/healthcare_privsearch-prototype_2026-07-15T05-48-51-545Z/`
+
+### Main summary files
+
+1. `Results/paper_assets/privsearch_statistical_rigor.md`
+2. `Results/paper_assets/privsearch_statistical_rigor_descriptive.csv`
+3. `Results/paper_assets/privsearch_statistical_rigor_significance.csv`
+4. `CHIGOZIE_PrivSearch_Implementation_paper.md`
+
+## 3. Enron Aligned Run
+
+- Run ID: `enron_privsearch-prototype_2026-07-15T07-12-46-002Z`
+- Workloads benchmarked: `448`
+- Trials per workload: `100`
+- Raw per-trial samples: `yes`
+- Verification failures: `0` across all implemented families
+
+### Enron headline workload-family means
+
+| Query Type | N | Mean Total ms | Mean Search ms | Mean Verify ms |
+|---|---:|---:|---:|---:|
+| `single_keyword` | 150 | 1.4101 | 0.2666 | 1.1392 |
+| `and_2` | 40 | 4.7145 | 0.0224 | 4.6863 |
+| `and_4` | 20 | 16.7982 | 0.0306 | 16.7585 |
+| `and_10` | 20 | 22.1457 | 0.0265 | 22.1002 |
+| `or_2` | 40 | 0.3116 | 0.1441 | 0.1613 |
+| `fuzzy_1` | 24 | 0.1268 | 0.0457 | 0.0779 |
+| `semantic_v1` | 12 | 204.6701 | 73.6869 | 107.3167 |
+
+### Enron weighted aggregate means
+
+| Metric | Value |
+|---|---:|
+| Weighted mean total latency | 13.9524 ms |
+| Weighted mean search latency | 3.5241 ms |
+| Weighted mean verification latency | 9.7855 ms |
+| Weighted authentication share | 70.13% |
+
+## 4. Healthcare Aligned Run
+
+- Run ID: `healthcare_privsearch-prototype_2026-07-15T05-48-51-545Z`
+- Workloads benchmarked: `258`
+- Trials per workload: `100`
+- Raw per-trial samples: `yes`
+- Verification failures: `0` across all implemented families
+
+### Healthcare headline workload-family means
+
+| Query Type | N | Mean Total ms | Mean Search ms | Mean Verify ms |
+|---|---:|---:|---:|---:|
+| `single_keyword` | 130 | 2.2107 | 0.4458 | 1.7599 |
+| `and_2` | 24 | 4.7188 | 0.0030 | 4.7105 |
+| `and_4` | 12 | 12.2154 | 0.0029 | 12.2038 |
+| `or_2` | 24 | 0.8942 | 0.6780 | 0.2077 |
+| `fuzzy_1` | 12 | 0.8703 | 0.7236 | 0.1395 |
+| `semantic_v1` | 12 | 2.1211 | 0.6402 | 0.8687 |
+| `range_month_1` | 8 | 6.2069 | 1.5087 | 4.6890 |
+| `range_year_2` | 4 | 28.2744 | 6.7425 | 21.5143 |
+
+### Healthcare weighted aggregate means
+
+| Metric | Value |
+|---|---:|
+| Weighted mean total latency | 3.3871 ms |
+| Weighted mean search latency | 0.6583 ms |
+| Weighted mean verification latency | 2.6937 ms |
+| Weighted authentication share | 79.53% |
+
+## 5. Statistical-Rigor Improvements Now Wired In
+
+The aligned update also changed the reporting method itself:
+
+1. raw per-trial latency arrays are now persisted for both Enron and healthcare reruns
+2. bootstrap confidence intervals are now included for workload-family summaries
+3. hierarchical bootstrap confidence intervals are now included where raw trials are available
+4. IQR reporting is now included to make skew visible
+5. significance testing still remains workload-level by design to avoid pseudo-replication
+
+## 6. Important Interpretation Changes
+
+These are the main scientific changes from the aligned reruns:
+
+1. Enron and healthcare are now on the same `100`-trial footing
+2. the older mismatch between `100`-trial Enron and `10`-trial healthcare has been removed
+3. the healthcare track still shows strong right-skew for several heavier families, but that skew is now reported honestly with bootstrap and IQR summaries
+4. Enron `and_2` and healthcare `and_2` now have nearly identical mean total latency:
+   - Enron `and_2`: `4.7145 ms`
+   - Healthcare `and_2`: `4.7188 ms`
+
+## 7. Current Significance Highlights
+
+Extracted from `Results/paper_assets/privsearch_statistical_rigor_significance.csv`:
+
+| Comparison | p-value | Cliff's delta | Significant at 0.05? |
+|---|---:|---:|---|
+| Enron `single_keyword` vs Enron `and_2` | 0.000200 | -0.6880 | yes |
+| Enron `and_2` vs Enron `or_2` | 0.000200 | 0.9350 | yes |
+| Enron `or_2` vs Enron `fuzzy_1` | 0.002599 | 0.8479 | yes |
+| Healthcare `single_keyword` vs Healthcare `and_2` | 0.301140 | 0.1506 | no |
+| Healthcare `and_2` vs Healthcare `or_2` | 0.494101 | 0.0069 | no |
+| Healthcare `semantic_v1` vs Healthcare `fuzzy_1` | 0.159968 | 0.8194 | no |
+| Enron `and_2` vs Healthcare `and_2` | 0.999800 | 0.7188 | no |
+
+## 8. Manuscript Sections Updated
+
+The following manuscript areas were refreshed to match the aligned reruns:
+
+1. Abstract
+2. dataset and benchmark-track description
+3. completed experimental scope
+4. statistical reporting protocol
+5. Enron query-family results table
+6. semantic_v1 results subsection
+7. healthcare validation subsection
+8. statistical-rigor interpretation subsection
+9. SeaCQ-aligned conjunctive comparison table
+10. conclusion
+11. artifact notes
+
+## 9. Best File to Cite Internally
+
+If you want one current file for the aligned experiment status, use:
+
+`Results/paper_assets/privsearch_recent_aligned_updates.md`
+
+If you want the full measured statistical tables, use:
+
+`Results/paper_assets/privsearch_statistical_rigor.md`

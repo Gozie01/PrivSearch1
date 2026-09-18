@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="470" viewBox="0 0 920 470">
+<style>
+text { font-family: Arial, sans-serif; fill: #1f2933; }
+.title { font-size: 18px; font-weight: 700; }
+.label { font-size: 12px; }
+.small { font-size: 11px; }
+.axisLabel { font-size: 12px; font-weight: 700; }
+.axis { stroke: #5b6570; stroke-width: 1; }
+</style>
+<text x="24" y="28" class="title">Figure 12. Authentication Overhead Share by Query Family</text>
+<line x1="70" y1="70" x2="70" y2="320" class="axis" />
+<line x1="70" y1="320" x2="870" y2="320" class="axis" />
+<line x1="70" y1="320" x2="870" y2="320" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="324" text-anchor="end" class="small">0</text>
+<line x1="70" y1="257.5" x2="870" y2="257.5" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="261.5" text-anchor="end" class="small">25</text>
+<line x1="70" y1="195" x2="870" y2="195" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="199" text-anchor="end" class="small">50</text>
+<line x1="70" y1="132.5" x2="870" y2="132.5" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="136.5" text-anchor="end" class="small">75</text>
+<line x1="70" y1="70" x2="870" y2="70" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="74" text-anchor="end" class="small">100</text>
+<text x="103.33333333333334" y="344" text-anchor="middle" class="label">and_2</text>
+<rect x="86.66666666666667" y="70.03390998625142" width="29.333333333333336" height="249.96609001374858" fill="#7c3aed" rx="3" />
+<text x="170.00000000000003" y="344" text-anchor="middle" class="label">and_4</text>
+<rect x="153.33333333333337" y="70" width="29.333333333333336" height="250" fill="#7c3aed" rx="3" />
+<text x="236.66666666666669" y="344" text-anchor="middle" class="label">fuzzy</text>
+<rect x="220.00000000000003" y="278.9821745690276" width="29.333333333333336" height="41.01782543097239" fill="#7c3aed" rx="3" />
+<text x="303.3333333333333" y="344" text-anchor="middle" class="label">or_2</text>
+<rect x="286.66666666666663" y="253.53853390503048" width="29.333333333333336" height="66.46146609496952" fill="#7c3aed" rx="3" />
+<text x="370" y="344" text-anchor="middle" class="label">or_3</text>
+<rect x="353.3333333333333" y="251.66079971965792" width="29.333333333333336" height="68.33920028034208" fill="#7c3aed" rx="3" />
+<text x="436.6666666666667" y="344" text-anchor="middle" class="label">or_of_and</text>
+<rect x="420" y="81.74199386520985" width="29.333333333333336" height="238.25800613479015" fill="#7c3aed" rx="3" />
+<text x="503.3333333333333" y="344" text-anchor="middle" class="label">month_1</text>
+<rect x="486.66666666666663" y="118.30432453526933" width="29.333333333333336" height="201.69567546473067" fill="#7c3aed" rx="3" />
+<text x="570.0000000000001" y="344" text-anchor="middle" class="label">month_3</text>
+<rect x="553.3333333333335" y="119.14489523407283" width="29.333333333333336" height="200.85510476592717" fill="#7c3aed" rx="3" />
+<text x="636.6666666666667" y="344" text-anchor="middle" class="label">year_2</text>
+<rect x="620.0000000000001" y="119.04186830998" width="29.333333333333336" height="200.95813169002" fill="#7c3aed" rx="3" />
+<text x="703.3333333333334" y="344" text-anchor="middle" class="label">year_3</text>
+<rect x="686.6666666666667" y="126.0615013096762" width="29.333333333333336" height="193.9384986903238" fill="#7c3aed" rx="3" />
+<text x="770.0000000000001" y="344" text-anchor="middle" class="label">semantic</text>
+<rect x="753.3333333333335" y="88.23622395258562" width="29.333333333333336" height="231.76377604741438" fill="#7c3aed" rx="3" />
+<text x="836.6666666666667" y="344" text-anchor="middle" class="label">single</text>
+<rect x="820.0000000000001" y="118.76511753795256" width="29.333333333333336" height="201.23488246204744" fill="#7c3aed" rx="3" />
+<rect x="80" y="408" width="14" height="14" fill="#7c3aed" rx="2" />
+<text x="102" y="420" class="label">Auth share %</text>
+<text x="470" y="370" text-anchor="middle" class="axisLabel">Query family</text>
+<text x="22" y="195" text-anchor="middle" transform="rotate(-90 22 195)" class="axisLabel">Authentication share (%)</text>
+</svg>

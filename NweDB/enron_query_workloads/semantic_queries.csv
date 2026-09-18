@@ -1,0 +1,13 @@
+query_id,query_type,bucket_profile,semantic_concept,query_text,semantic_keywords,matched_keywords,semantic_top_k,candidate_result_count,expected_result_count
+SQ1_001,semantic_v1,high,energy_contracts,energy contract pricing and forward gas supply,energy|contract|pricing|gas,energy|contract|pricing|gas|power|forward|deal|supply|price|terms,10,220450,10
+SQ1_002,semantic_v1,high,power_generation,power generation turbine electricity and gas operations,power|generation|turbine|electricity,power|generation|turbine|electricity|gas|energy|operations|supply,10,147492,10
+SQ1_003,semantic_v1,high,internet_access,internet access login dns and network setup,internet|access|login|network,internet|access|login|network|dns|static|server|password,10,61430,10
+SQ1_004,semantic_v1,high,trading_risk,trading risk market exposure and hedge strategy,trading|risk|market|hedge,trading|risk|market|hedge|exposure|deal|price|forward,10,171083,10
+SQ1_005,semantic_v1,high,customer_support,customer service request support issue resolution,customer|service|support|request,customer|service|support|request|issue|problem|response,10,135493,10
+SQ1_006,semantic_v1,high,meeting_coordination,meeting conference call discussion and schedule,conference|schedule,conference|schedule|discussion|agenda|update|plan,10,113419,10
+SQ1_007,semantic_v1,high,finance_credit,finance credit payment cost and revenue review,finance|credit|payment|cost,finance|credit|payment|cost|revenue|budget|invoice|price,10,105724,10
+SQ1_008,semantic_v1,high,legal_compliance,legal compliance policy approval and regulation,legal|compliance|policy|approval,legal|compliance|policy|approval|contract|regulatory|law,10,111190,10
+SQ1_009,semantic_v1,high,procurement_orders,purchase order vendor supplier and invoice processing,purchase|order|vendor|supplier,purchase|order|vendor|supplier|invoice|payment|delivery|request,10,101853,10
+SQ1_010,semantic_v1,high,project_updates,project update milestone planning and deliverables,project|update|plan|milestone,project|update|plan|milestone|deliverables|schedule|status,10,110580,10
+SQ1_011,semantic_v1,high,security_access,security password access server and network control,security|password|access|server,security|password|access|server|network|login|control|system,10,89594,10
+SQ1_012,semantic_v1,high,travel_logistics,travel trip flight hotel and itinerary coordination,travel|trip|flight|hotel,travel|trip|flight|hotel|itinerary|schedule|reservation,10,54956,10

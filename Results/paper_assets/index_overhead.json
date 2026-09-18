@@ -1,0 +1,98 @@
+{
+  "generatedAt": "2026-05-29T10:02:02.081Z",
+  "config": {
+    "scales": [
+      5000,
+      20000,
+      50000
+    ],
+    "benchCollection": "shipments_index_bench",
+    "liveCollection": "shipments",
+    "standardIndexes": [
+      "{\"sku\":1}",
+      "{\"batchNumber\":1}",
+      "{\"currentLocation.facilityId\":1}",
+      "{\"status\":1}",
+      "{\"actorType\":1}",
+      "{\"_createdAt\":-1}"
+    ]
+  },
+  "exp81": {
+    "scales": [
+      {
+        "n": 5000,
+        "withIndexesMeanMs": 0.5536986200000011,
+        "withIndexesStddev": 0.1003357201603488,
+        "noIndexesMeanMs": 0.5309825599999987,
+        "noIndexesStddev": 0.2138540218369675,
+        "overheadPct": 4.278117910313761
+      },
+      {
+        "n": 20000,
+        "withIndexesMeanMs": 0.5293420049999968,
+        "withIndexesStddev": 0.11004210140705178,
+        "noIndexesMeanMs": 0.5046751400000041,
+        "noIndexesStddev": 0.12150536081168906,
+        "overheadPct": 4.887671899192925
+      },
+      {
+        "n": 50000,
+        "withIndexesMeanMs": 0.5258913179999879,
+        "withIndexesStddev": 0.14714613121524459,
+        "noIndexesMeanMs": 0.5045474379999914,
+        "noIndexesStddev": 0.11614241939548635,
+        "overheadPct": 4.230301928516966
+      }
+    ]
+  },
+  "exp82": {
+    "queryPlans": [
+      {
+        "queryType": "SKU",
+        "filter": "{\"sku\":\"SKU-BENCH-1\",\"_isDeleted\":false}",
+        "stage": "IXSCAN",
+        "keysExamined": 0,
+        "docsExamined": 0,
+        "executionTimeMs": 2,
+        "nReturned": 0
+      },
+      {
+        "queryType": "Batch",
+        "filter": "{\"batchNumber\":\"BATCH-exp82-0\",\"_isDeleted\":false}",
+        "stage": "IXSCAN",
+        "keysExamined": 0,
+        "docsExamined": 0,
+        "executionTimeMs": 0,
+        "nReturned": 0
+      },
+      {
+        "queryType": "Facility",
+        "filter": "{\"currentLocation.facilityId\":\"FAC-CURR-1\",\"_isDeleted\":false}",
+        "stage": "IXSCAN",
+        "keysExamined": 0,
+        "docsExamined": 0,
+        "executionTimeMs": 0,
+        "nReturned": 0
+      },
+      {
+        "queryType": "Status",
+        "filter": "{\"status\":\"IN_TRANSIT\",\"_isDeleted\":false}",
+        "stage": "IXSCAN",
+        "keysExamined": 3405,
+        "docsExamined": 3405,
+        "executionTimeMs": 8,
+        "nReturned": 3405
+      },
+      {
+        "queryType": "ActorType",
+        "filter": "{\"actorType\":\"DISTRIBUTOR\",\"_isDeleted\":false}",
+        "stage": "COLLSCAN",
+        "keysExamined": 0,
+        "docsExamined": 5994,
+        "executionTimeMs": 3,
+        "nReturned": 0
+      }
+    ],
+    "seeded": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-07-09T05:07:48.674Z",
+  "inputs": {
+    "eicu_root": "C:/Users/Gozie/Desktop/Blockchain in Clinical Trial/Fedlearn/MIMIC Dataset/eicu-collaborative-research-database-demo-2.0.1",
+    "medcd_root": "C:/Users/Gozie/Desktop/PR-RemoteCare/MedCD",
+    "openfda_root": "C:\\Users\\Gozie\\Desktop\\Search Functionality in Blockchain\\lifedb ICMIC\\NweDB\\openfda"
+  },
+  "eicu": {
+    "output_root": "NweDB\\healthcare\\eicu_demo",
+    "patients": 2520,
+    "diagnosis_records": 24978,
+    "medication_records": 75604,
+    "replay_event_candidates": 1500,
+    "corpus_documents": 100582
+  },
+  "medcd": {
+    "output_root": "NweDB\\healthcare\\medcd",
+    "notes": 1999,
+    "queries": 20
+  },
+  "openfda": {
+    "output_root": "NweDB\\healthcare\\openfda",
+    "enforcement_records": 17755,
+    "ndc_records": 136437,
+    "recall_product_records": 24269,
+    "corpus_documents": 178461
+  },
+  "combined": {
+    "output_root": "NweDB\\healthcare\\combined",
+    "total_documents": 281042
+  }
+}

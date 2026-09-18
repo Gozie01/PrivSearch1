@@ -1,0 +1,58 @@
+{
+  "corpus_size_points": [
+    {
+      "label": "C1_10000",
+      "enabled": false,
+      "configured_value": 10000,
+      "queryTypes": ["single_keyword", "and_2", "and_4"],
+      "sampleQueries": 6,
+      "trials": 5,
+      "workloadRoot": "",
+      "indexRoot": "",
+      "corpusFile": "",
+      "processedRoot": "",
+      "notes": "Fill these paths after preparing a 10k-record slice."
+    },
+    {
+      "label": "C2_50000",
+      "enabled": false,
+      "configured_value": 50000,
+      "queryTypes": ["single_keyword", "and_2", "and_4"],
+      "sampleQueries": 6,
+      "trials": 5,
+      "workloadRoot": "",
+      "indexRoot": "",
+      "corpusFile": "",
+      "processedRoot": "",
+      "notes": "Fill these paths after preparing a 50k-record slice."
+    }
+  ],
+  "vocabulary_size_points": [
+    {
+      "label": "V1_5000",
+      "enabled": false,
+      "configured_value": 5000,
+      "queryTypes": ["single_keyword", "fuzzy_1"],
+      "sampleQueries": 6,
+      "trials": 5,
+      "workloadRoot": "",
+      "indexRoot": "",
+      "corpusFile": "",
+      "processedRoot": "",
+      "notes": "Fill these paths after preparing a 5k-keyword slice."
+    },
+    {
+      "label": "V2_25000",
+      "enabled": false,
+      "configured_value": 25000,
+      "queryTypes": ["single_keyword", "fuzzy_1"],
+      "sampleQueries": 6,
+      "trials": 5,
+      "workloadRoot": "",
+      "indexRoot": "",
+      "corpusFile": "",
+      "processedRoot": "",
+      "notes": "Fill these paths after preparing a 25k-keyword slice."
+    }
+  ]
+}

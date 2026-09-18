@@ -1,0 +1,13 @@
+query_id,query_type,bucket_profile,fuzzy_term,matched_keywords,max_edit_distance,expected_result_count
+HFQ_001,fuzzy_1,rare,accxss,access,1,20
+HFQ_002,fuzzy_1,low,methoxycxnnamate,methoxycinnamate,1,61
+HFQ_003,fuzzy_1,medium,ignxtia,ignatia,1,224
+HFQ_004,fuzzy_1,high,powxer,powder,1,19012
+HFQ_005,fuzzy_1,high,comxany,company,1,6475
+HFQ_006,fuzzy_1,high,rhyxhm,rhythm,1,3677
+HFQ_007,fuzzy_1,high,alxne,alone,1,2684
+HFQ_008,fuzzy_1,high,relxted,related,1,1987
+HFQ_009,fuzzy_1,high,sexd,seed,1,1607
+HFQ_010,fuzzy_1,high,box,box,1,1312
+HFQ_011,fuzzy_1,high,usxd,used,1,1154
+HFQ_012,fuzzy_1,high,glenxark,glenmark,1,1001

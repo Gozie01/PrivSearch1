@@ -1,0 +1,13 @@
+query_id,query_type,clause_1_keywords,clause_2_keywords,clause_1_result_count,clause_2_result_count,expected_result_count
+HOO_001,or_of_and,j96|drug,bulk|drug,55,102,157
+HOO_002,or_of_and,csicu|surgery,park|drug,192,440,632
+HOO_003,or_of_and,box|drug,upc|drug,346,951,1192
+HOO_004,or_of_and,bulk|drug,stroke|med,102,1440,1542
+HOO_005,or_of_and,lorazepam|drug,chewable|drug,245,1596,1841
+HOO_006,or_of_and,lorazepam|drug,delayed|drug,245,1907,2152
+HOO_007,or_of_and,j96|drug,menthol|drug,55,2515,2570
+HOO_008,or_of_and,三次|门诊,cold|drug,1285,1686,2969
+HOO_009,or_of_and,csicu|surgery,octisalate|drug,192,3440,3632
+HOO_010,or_of_and,chewable|drug,octisalate|drug,1596,3440,5036
+HOO_011,or_of_and,dba|drug,intravenous|drug,2229,6899,8858
+HOO_012,or_of_and,octisalate|drug,anda|drug,3440,50335,53775

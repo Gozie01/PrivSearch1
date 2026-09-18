@@ -1,0 +1,11 @@
+exp,n,with_indexes_mean_ms,with_indexes_stddev_ms,no_indexes_mean_ms,no_indexes_stddev_ms,overhead_pct
+EXP-8.1,5000,0.553699,0.100336,0.530983,0.213854,4.2781
+EXP-8.1,20000,0.529342,0.110042,0.504675,0.121505,4.8877
+EXP-8.1,50000,0.525891,0.147146,0.504547,0.116142,4.2303
+
+exp,query_type,stage,keys_examined,docs_examined,execution_time_ms,n_returned
+EXP-8.2,SKU,IXSCAN,0,0,2,0
+EXP-8.2,Batch,IXSCAN,0,0,0,0
+EXP-8.2,Facility,IXSCAN,0,0,0,0
+EXP-8.2,Status,IXSCAN,3405,3405,8,3405
+EXP-8.2,ActorType,COLLSCAN,0,5994,3,0

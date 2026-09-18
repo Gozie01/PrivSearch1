@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-07-08T05:28:40.960Z",
+  "notes": [],
+  "experiments": {
+    "auditChainTamper": {
+      "skipped": false,
+      "chainBlocks": 2740,
+      "n": 1000,
+      "blockHashTamper": {
+        "n": 1000,
+        "detections": 1000,
+        "detectionRate": 1,
+        "detectionCI95lo": 0.9961731014136095,
+        "detectionCI95hi": 1,
+        "meanDetectionTimeMs": 0.6974799999999878,
+        "p95DetectionTimeMs": 1.2980999999999767
+      },
+      "merkleRootTamper": {
+        "n": 1000,
+        "detections": 1000,
+        "detectionRate": 1,
+        "detectionCI95lo": 0.9961731014136095,
+        "detectionCI95hi": 1,
+        "meanDetectionTimeMs": 0.7198133999999982,
+        "p95DetectionTimeMs": 1.2757999999994354
+      },
+      "indexTamper": {
+        "n": 1000,
+        "detections": 1000,
+        "detectionRate": 1,
+        "detectionCI95lo": 0.9961731014136095,
+        "detectionCI95hi": 1,
+        "meanDetectionTimeMs": 0.6470084999999899,
+        "p95DetectionTimeMs": 1.1838999999999942
+      },
+      "detectionRate": 1,
+      "detectionCI95lo": 0.9987211043351955,
+      "detectionCI95hi": 1,
+      "meanDetectionTimeMs": 0.6881006333333253,
+      "p95DetectionTimeMs": 1.2980999999999767
+    },
+    "mongoTamper": {
+      "skipped": false,
+      "n": 500,
+      "detections": 500,
+      "detectionRate": 1,
+      "detectionCI95lo": 0.9923753814690964,
+      "detectionCI95hi": 0.9999999999999999,
+      "meanDetectionTimeMs": 2.2134943999999943,
+      "p95DetectionTimeMs": 2.9206999999996697
+    },
+    "replayAttack": {
+      "skipped": false,
+      "n": 0,
+      "rejections": 0,
+      "detectionRate": 0,
+      "detectionCI95lo": 0,
+      "detectionCI95hi": 0,
+      "meanDetectionTimeMs": 0,
+      "p95DetectionTimeMs": 0
+    },
+    "merkleProof": {
+      "skipped": false,
+      "trees": 100,
+      "proofsPerTree": 10,
+      "n": 2000,
+      "validProofs": {
+        "n": 1000,
+        "successes": 1000,
+        "successRate": 1,
+        "successCI95lo": 0.9961731014136095,
+        "successCI95hi": 1,
+        "meanTimeMs": 0.004991200000004028,
+        "p95TimeMs": 0.009500000000116415
+      },
+      "corruptedProofs": {
+        "n": 1000,
+        "rejections": 1000,
+        "rejectionRate": 1,
+        "rejectionCI95lo": 0.9961731014136095,
+        "rejectionCI95hi": 1,
+        "meanTimeMs": 0.005003699999988385,
+        "p95TimeMs": 0.009000000000014552
+      },
+      "detectionRate": 1,
+      "detectionCI95lo": 0.9961731014136095,
+      "detectionCI95hi": 1,
+      "meanDetectionTimeMs": 0.004997449999996207,
+      "p95DetectionTimeMs": 0.009100000001126318
+    }
+  }
+}

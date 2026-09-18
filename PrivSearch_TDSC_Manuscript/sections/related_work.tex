@@ -1,0 +1,64 @@
+\section{Related Work}
+\label{sec:related}
+
+Secure query processing over outsourced blockchain data spans four intersecting research directions: efficient blockchain query processing, authenticated query services, searchable encryption, and hybrid or trusted execution architectures~\cite{ChenAilin}. Existing systems generally optimize only a subset of the security, functionality, and deployment requirements addressed by PrivSearch.
+
+\begin{table*}[t]
+\centering
+\caption{Comparison of PrivSearch with Representative Secure and Blockchain Query Frameworks}
+\label{tab:related_comparison}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{1.5cm}>{\centering\arraybackslash}p{1.0cm}>{\centering\arraybackslash}p{1.1cm}>{\centering\arraybackslash}p{1.05cm}>{\centering\arraybackslash}p{1.15cm}p{4.6cm}>{\centering\arraybackslash}p{1.1cm}>{\centering\arraybackslash}p{1.15cm}>{\centering\arraybackslash}p{1.15cm}@{}}
+\toprule
+\textbf{Scheme} & \textbf{Block-chain} & \textbf{Hybrid Storage} & \textbf{Query Privacy} & \textbf{Auth.\ Results} & \textbf{Supported Query Functionality} & \textbf{Replay Prot.} & \textbf{Formal Sec.\ Analysis} & \textbf{Trusted HW} \\
+\midrule
+\cite{Lai}  & Y & N & N & P & Traceability and intra-/inter-block search & N & N & N \\
+\cite{Hu} & Y & N & N & N & Product-lifecycle and transaction lookup & N & N & N \\
+\cite{Lee} & Y & N & N & N & Equality and range & N & N & N \\
+\cite{WuHaotianPeng} & Y & Y & N & Y & Database-oriented blockchain queries & N & P & N \\
+\cite{LeeJoonYoung} & Y & P & Y & P & Keyword search and multidelegation & N & Y & N \\
+\cite{Zhang} & N & N & Y & N & Attribute-based keyword search & N & Y & N \\
+\cite{Yao} & N & N & Y & N & Multi-source encrypted keyword search & N & Y & N \\
+\cite{Lu} & N & N & Y & Y & Conjunctive field-keyword search & N & Y & N \\
+\cite{Li}  & Y & Y & Y & P & Encrypted keyword search & N & Y & N \\
+\cite{Yin}  & Y & P & N & Y & Multi-attribute range and object queries & N & Y & N \\
+\cite{Xu}  & Y & Y & N & Y & Spatial--temporal--keyword range and $k$NN & N & Y & N \\
+\cite{Wu}  & Y & Y & Y & Y & Authenticated graph queries & N & Y & N \\
+\cite{Yang}  & Y & Y & Y & Y & Authenticated conjunctive keyword search & N & Y & N \\
+\cite{Zhou}  & Y & Y & N & P & Multi-keyword, range, Top-$k$, semantic, cross-chain & N & P & N \\
+\cite{Dutta} & Y & P & Y & P & Metadata-assisted healthcare queries & N & P & N \\
+\cite{WuHaotian} & Y & N & Y & Y & Exact, Boolean, aggregate, and range & N & Y & Y \\
+\cite{Liu} & Y & Y & N & Y & Fine-grained authenticated range queries & N & P & N \\
+\cite{ChenBaochao} & Y & Y & N & Y & Verifiable keyword search (federated storage) & N & P & N \\
+\textbf{PrivSearch} & \textbf{Y} & \textbf{Y} & \textbf{Y} & \textbf{Y} & \textbf{Conjunctive, disjunctive, OR-of-AND, temporal, bounded fuzzy, semantic} & \textbf{Y} & \textbf{Y} & \textbf{N} \\
+\bottomrule
+\end{tabular}
+\\[2pt]
+\footnotesize Y: supported; N: not supported; P: partially supported or not a principal design objective.
+\end{table*}
+
+\subsection{Efficient Query Processing over Blockchain Data}
+\label{2A}
+
+Blockchain storage is optimized for transaction validation and immutable record keeping rather than expressive data retrieval. Several studies improve query efficiency through auxiliary indexes and data reorganization: Lai et al.~\cite{Lai} redesign blockchain indexes to accelerate intra- and inter-block traceability queries, Hu et al.~\cite{Hu} employ transaction-index mappings for manufacturing lifecycle retrieval, and Lee et al.~\cite{Lee} integrate hierarchical B-tree indexes with an LSM-tree to improve equality and range-query performance. VQL~\cite{WuHaotianPeng} instead separates query execution from blockchain consensus by executing queries over a cloud database while anchoring integrity fingerprints on-chain. Outside blockchain systems, query clustering~\cite{Lin} and common-table-expression optimization~\cite{Harris} improve the scalability of complex analytical queries. Despite these advances, existing approaches optimize retrieval efficiency under an honest-query-engine assumption, without encrypted expressive search or client-side verification of result correctness and completeness.
+
+\subsection{Authenticated Blockchain Query Services}
+\label{2B}
+
+Authenticated data structures enable clients to verify the correctness and completeness of outsourced query results. EAQ~\cite{Yin} employs an MR Bloom-tree to support authenticated multi-attribute range and object queries, including proofs of nonexistence, whereas the STK framework~\cite{Xu} extends authenticated querying to spatial--temporal--keyword range and $k$-nearest-neighbor searches. PAGB~\cite{Wu} combines RSA accumulators with completeness sets to authenticate graph queries over hybrid blockchain architectures. SeaCQ~\cite{Yang}, the closest system to PrivSearch, supports encrypted authenticated conjunctive keyword search with efficient two-stage verification and reduced on-chain overhead, but its query model remains limited to conjunctive predicates. More recent systems reduce verification overhead or add privacy-aware aggregation: MPV~\cite{Liu} authenticates range queries via multi-dimensional parity checks, EVQ~\cite{ChenBaochao} authenticates keyword search through a split ADS for federated storage, and VKFQ~\cite{Ji} adds local differential privacy to keyword-frequency queries. None of these extend to disjunctive, temporal, fuzzy, or semantic retrieval. Authenticated query frameworks thus trade query expressiveness for authentication efficiency, with richer semantics generally unsupported or exposed during processing.
+
+\subsection{Searchable Encryption for Sensitive and Healthcare Data}
+\label{2C}
+
+Searchable encryption enables confidential retrieval over encrypted datasets without exposing plaintext records or search keywords. General-purpose dynamic schemes continue to advance: Guo et al.~\cite{Guo} construct a forward-private, verifiable scheme for conjunctive queries, and Zheng et al.~\cite{Zheng} propose Themis, a robust, light-client scheme tolerant of client misoperations. Healthcare-specific extensions include blockchain-enabled key-aggregate searchable encryption~\cite{LeeJoonYoung}, attribute-based searchable encryption with hidden access policies~\cite{Zhang}, multi-source encrypted retrieval~\cite{Yao}, verifiable conjunctive searchable encryption~\cite{Lu}, and hybrid architectures such as Healthchain~\cite{Li}. These approaches strengthen confidentiality, access control, and delegation, but emphasize keyword privacy and authorization rather than authenticated expressive query processing; blockchain-backed correctness, completeness, replay resistance, and richer query operators remain largely unexplored.
+
+\subsection{Hybrid, Semantic, and Trusted Execution Approaches}
+\label{2D}
+
+Hybrid blockchain architectures improve scalability by storing large datasets and indexes off-chain while preserving integrity commitments on-chain. MSTDB~\cite{Zhou} employs a Merkle Semantic Trie to support authenticated multi-keyword, range, Top-$k$, semantic, and cross-chain queries. Dutta et al.~\cite{Dutta} combine metadata optimization with explainable AI to accelerate healthcare query processing. TELEX~\cite{WuHaotian} instead executes exact, Boolean, aggregate, and range queries inside secure enclaves, combining learned indexes with oblivious RAM to protect access patterns. These systems improve query functionality and privacy but depend on trusted hardware or emphasize efficiency over encrypted authenticated retrieval. Asiamah et al.~\cite{Asiamah} identify authenticated retrieval, expressive query semantics, scalable verification, and privacy-preserving search as persistent open challenges for blockchain-assisted information systems.
+
+\subsection{Research Gap and Positioning of PrivSearch}
+\label{2E}
+
+Table~\ref{tab:related_comparison} summarizes the capabilities of representative systems. Existing approaches exhibit four common limitations. First, indexing-oriented methods improve query efficiency but generally lack authenticated expressive retrieval~\cite{Lai,Hu,Lee,WuHaotianPeng}. Second, authenticated query frameworks provide verifiable or privacy-aware results but remain specialized for particular workloads such as range, spatial--temporal, graph, or aggregate-frequency queries~\cite{Yin,Xu,Wu,Liu,ChenBaochao,Ji}. Third, searchable encryption schemes, healthcare-specific and general-purpose alike, emphasize confidentiality, forward privacy, or robustness, but offer limited query expressiveness and little support for blockchain-backed completeness verification~\cite{LeeJoonYoung,Zhang,Yao,Lu,Li,Guo,Zheng}. Finally, SeaCQ and TELEX improve either authenticated search or expressive querying but remain constrained by conjunctive query models or trusted hardware assumptions~\cite{Yang,WuHaotian}. PrivSearch addresses these limitations within a hybrid blockchain architecture by integrating authenticated encrypted retrieval, support for conjunctive, disjunctive, OR-of-AND, temporal, bounded fuzzy, and semantic queries, nonce-based replay protection, and formal security guarantees, without relying on trusted execution hardware.

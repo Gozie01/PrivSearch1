@@ -1,0 +1,12 @@
+left_dataset,left_query_type,right_dataset,right_query_type,sample_count_left,sample_count_right,observed_mean_diff_ms,p_value,effect_size_cliffs_delta,effect_magnitude,significant_alpha_0_05,test,note
+enron,single_keyword,enron,and_2,150,40,-3.30444383333322,0.0001999600079984003,-0.688,large,yes,two-sided permutation test on workload-level mean total latency,single_keyword vs and_2 within Enron
+enron,and_2,enron,or_2,40,40,4.402894399999484,0.0001999600079984003,0.935,large,yes,two-sided permutation test on workload-level mean total latency,and_2 vs or_2 within Enron
+enron,or_2,enron,fuzzy_1,40,24,0.1847519166668111,0.002599480103979204,0.8479166666666667,large,yes,two-sided permutation test on workload-level mean total latency,or_2 vs fuzzy_1 within Enron
+healthcare,single_keyword,healthcare,and_2,130,24,-2.5081129653843353,0.3011397720455909,0.15064102564102563,small,no,two-sided permutation test on workload-level mean total latency,single_keyword vs and_2 within healthcare
+healthcare,and_2,healthcare,or_2,24,24,3.8245479999997105,0.4941011797640472,0.006944444444444444,negligible,no,two-sided permutation test on workload-level mean total latency,and_2 vs or_2 within healthcare
+healthcare,range_month_1,healthcare,range_year_2,8,4,-22.06753537499906,0.1245750849830034,-0.4375,medium,no,two-sided permutation test on workload-level mean total latency,range_month_1 vs range_year_2 within healthcare
+healthcare,semantic_v1,healthcare,fuzzy_1,12,12,1.2508499166668723,0.15996800639872025,0.8194444444444444,large,no,two-sided permutation test on workload-level mean total latency,semantic_v1 vs fuzzy_1 within healthcare
+enron,single_keyword,healthcare,single_keyword,150,130,-0.80060321794865,0.6096780643871226,0.04317948717948718,negligible,no,two-sided permutation test on workload-level mean total latency,single_keyword across datasets
+enron,and_2,healthcare,and_2,40,24,-0.004272349999765446,0.9998000399920016,0.71875,large,no,two-sided permutation test on workload-level mean total latency,and_2 across datasets
+enron,or_2,healthcare,or_2,40,24,-0.5826187499995393,0.3135372925414917,0.06666666666666667,negligible,no,two-sided permutation test on workload-level mean total latency,or_2 across datasets
+enron,fuzzy_1,healthcare,fuzzy_1,24,12,-0.7434447499997866,0.13617276544691062,-0.3263888888888889,small,no,two-sided permutation test on workload-level mean total latency,fuzzy_1 across datasets

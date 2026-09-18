@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1008" height="240" viewBox="0 0 1008 240">
+  <rect width="1008" height="240" fill="#fafaf9" />
+  
+      <g>
+        <rect x="0" y="0" width="320" height="240" rx="12" fill="#fffdf8" />
+        <text x="160.00" y="18" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1917">Search Phase</text>
+        
+        <line x1="62" y1="196.00" x2="300.00" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="54.00" y="200.00" text-anchor="end" font-size="11" fill="#1c1917">0.01</text>
+      
+        <line x1="62" y1="156.00" x2="300.00" y2="156.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="54.00" y="160.00" text-anchor="end" font-size="11" fill="#1c1917">0.1</text>
+      
+        <line x1="62" y1="116.00" x2="300.00" y2="116.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="54.00" y="120.00" text-anchor="end" font-size="11" fill="#1c1917">1</text>
+      
+        <line x1="62" y1="76.00" x2="300.00" y2="76.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="54.00" y="80.00" text-anchor="end" font-size="11" fill="#1c1917">10</text>
+      
+        <line x1="62" y1="36.00" x2="300.00" y2="36.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="54.00" y="40.00" text-anchor="end" font-size="11" fill="#1c1917">100</text>
+      
+        
+      <line x1="62.00" y1="36" x2="62.00" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="62.00" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">2</text>
+    
+      <line x1="121.50" y1="36" x2="121.50" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="121.50" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">4</text>
+    
+      <line x1="181.00" y1="36" x2="181.00" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="181.00" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">6</text>
+    
+      <line x1="240.50" y1="36" x2="240.50" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="240.50" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">8</text>
+    
+      <line x1="300.00" y1="36" x2="300.00" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="300.00" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">10</text>
+    
+        <rect x="62" y="36" width="238" height="160" fill="none" stroke="#44403c" stroke-width="1.2" />
+        <text x="181.00" y="230.00" text-anchor="middle" font-size="12" fill="#1c1917">Query keywords</text>
+        <text x="18.00" y="116.00" text-anchor="middle" transform="rotate(-90 18.00 116.00)" font-size="12" fill="#1c1917">Latency (ms, log scale)</text>
+        
+      <line x1="68.00" y1="20.00" x2="88.00" y2="20.00" stroke="#0f766e" stroke-width="2.5" />
+      <circle cx="78.00" cy="20.00" r="3.5" fill="#0f766e" />
+      <text x="94.00" y="24.00" font-size="11" fill="#1c1917">PrivSearch</text>
+      <line x1="172.00" y1="20.00" x2="192.00" y2="20.00" stroke="#b45309" stroke-width="2.5" />
+      <circle cx="182.00" cy="20.00" r="3.5" fill="#b45309" />
+      <text x="198.00" y="24.00" font-size="11" fill="#1c1917">SeaCQ</text>
+    
+        <path d="M 62.00 161.28 L 121.50 158.81 L 181.00 164.31 L 240.50 170.95 L 300.00 175.49" fill="none" stroke="#0f766e" stroke-width="2.5" /><path d="M 62.00 68.39 L 121.50 68.96 L 181.00 68.96 L 240.50 69.55 L 300.00 69.55" fill="none" stroke="#b45309" stroke-width="2.5" />
+        
+      <circle cx="62.00" cy="161.28" r="3.5" fill="#0f766e" />
+    
+      <circle cx="121.50" cy="158.81" r="3.5" fill="#0f766e" />
+    
+      <circle cx="181.00" cy="164.31" r="3.5" fill="#0f766e" />
+    
+      <circle cx="240.50" cy="170.95" r="3.5" fill="#0f766e" />
+    
+      <circle cx="300.00" cy="175.49" r="3.5" fill="#0f766e" />
+    
+      <circle cx="62.00" cy="68.39" r="3.5" fill="#b45309" />
+    
+      <circle cx="121.50" cy="68.96" r="3.5" fill="#b45309" />
+    
+      <circle cx="181.00" cy="68.96" r="3.5" fill="#b45309" />
+    
+      <circle cx="240.50" cy="69.55" r="3.5" fill="#b45309" />
+    
+      <circle cx="300.00" cy="69.55" r="3.5" fill="#b45309" />
+    
+      </g>
+    
+      <g>
+        <rect x="344" y="0" width="320" height="240" rx="12" fill="#fffdf8" />
+        <text x="504.00" y="18" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1917">Verify Phase</text>
+        
+        <line x1="406" y1="196.00" x2="644.00" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="398.00" y="200.00" text-anchor="end" font-size="11" fill="#1c1917">0.1</text>
+      
+        <line x1="406" y1="164.00" x2="644.00" y2="164.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="398.00" y="168.00" text-anchor="end" font-size="11" fill="#1c1917">1</text>
+      
+        <line x1="406" y1="132.00" x2="644.00" y2="132.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="398.00" y="136.00" text-anchor="end" font-size="11" fill="#1c1917">10</text>
+      
+        <line x1="406" y1="100.00" x2="644.00" y2="100.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="398.00" y="104.00" text-anchor="end" font-size="11" fill="#1c1917">100</text>
+      
+        <line x1="406" y1="68.00" x2="644.00" y2="68.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="398.00" y="72.00" text-anchor="end" font-size="11" fill="#1c1917">1k</text>
+      
+        <line x1="406" y1="36.00" x2="644.00" y2="36.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="398.00" y="40.00" text-anchor="end" font-size="11" fill="#1c1917">10k</text>
+      
+        
+      <line x1="406.00" y1="36" x2="406.00" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="406.00" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">2</text>
+    
+      <line x1="465.50" y1="36" x2="465.50" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="465.50" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">4</text>
+    
+      <line x1="525.00" y1="36" x2="525.00" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="525.00" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">6</text>
+    
+      <line x1="584.50" y1="36" x2="584.50" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="584.50" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">8</text>
+    
+      <line x1="644.00" y1="36" x2="644.00" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="644.00" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">10</text>
+    
+        <rect x="406" y="36" width="238" height="160" fill="none" stroke="#44403c" stroke-width="1.2" />
+        <text x="525.00" y="230.00" text-anchor="middle" font-size="12" fill="#1c1917">Query keywords</text>
+        <text x="362.00" y="116.00" text-anchor="middle" transform="rotate(-90 362.00 116.00)" font-size="12" fill="#1c1917">Latency (ms, log scale)</text>
+        
+      <line x1="412.00" y1="20.00" x2="432.00" y2="20.00" stroke="#0f766e" stroke-width="2.5" />
+      <circle cx="422.00" cy="20.00" r="3.5" fill="#0f766e" />
+      <text x="438.00" y="24.00" font-size="11" fill="#1c1917">PrivSearch</text>
+      <line x1="516.00" y1="20.00" x2="536.00" y2="20.00" stroke="#b45309" stroke-width="2.5" />
+      <circle cx="526.00" cy="20.00" r="3.5" fill="#b45309" />
+      <text x="542.00" y="24.00" font-size="11" fill="#1c1917">SeaCQ</text>
+    
+        <path d="M 406.00 185.41 L 465.50 178.20 L 525.00 175.30 L 584.50 172.85 L 644.00 168.52" fill="none" stroke="#0f766e" stroke-width="2.5" /><path d="M 406.00 56.42 L 465.50 56.73 L 525.00 56.73 L 584.50 56.42 L 644.00 56.13" fill="none" stroke="#b45309" stroke-width="2.5" />
+        
+      <circle cx="406.00" cy="185.41" r="3.5" fill="#0f766e" />
+    
+      <circle cx="465.50" cy="178.20" r="3.5" fill="#0f766e" />
+    
+      <circle cx="525.00" cy="175.30" r="3.5" fill="#0f766e" />
+    
+      <circle cx="584.50" cy="172.85" r="3.5" fill="#0f766e" />
+    
+      <circle cx="644.00" cy="168.52" r="3.5" fill="#0f766e" />
+    
+      <circle cx="406.00" cy="56.42" r="3.5" fill="#b45309" />
+    
+      <circle cx="465.50" cy="56.73" r="3.5" fill="#b45309" />
+    
+      <circle cx="525.00" cy="56.73" r="3.5" fill="#b45309" />
+    
+      <circle cx="584.50" cy="56.42" r="3.5" fill="#b45309" />
+    
+      <circle cx="644.00" cy="56.13" r="3.5" fill="#b45309" />
+    
+      </g>
+    
+      <g>
+        <rect x="688" y="0" width="320" height="240" rx="12" fill="#fffdf8" />
+        <text x="848.00" y="18" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1917">Search + Verify</text>
+        
+        <line x1="750" y1="196.00" x2="988.00" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="742.00" y="200.00" text-anchor="end" font-size="11" fill="#1c1917">0.1</text>
+      
+        <line x1="750" y1="164.00" x2="988.00" y2="164.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="742.00" y="168.00" text-anchor="end" font-size="11" fill="#1c1917">1</text>
+      
+        <line x1="750" y1="132.00" x2="988.00" y2="132.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="742.00" y="136.00" text-anchor="end" font-size="11" fill="#1c1917">10</text>
+      
+        <line x1="750" y1="100.00" x2="988.00" y2="100.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="742.00" y="104.00" text-anchor="end" font-size="11" fill="#1c1917">100</text>
+      
+        <line x1="750" y1="68.00" x2="988.00" y2="68.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="742.00" y="72.00" text-anchor="end" font-size="11" fill="#1c1917">1k</text>
+      
+        <line x1="750" y1="36.00" x2="988.00" y2="36.00" stroke="#d6d3d1" stroke-width="1" />
+        <text x="742.00" y="40.00" text-anchor="end" font-size="11" fill="#1c1917">10k</text>
+      
+        
+      <line x1="750.00" y1="36" x2="750.00" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="750.00" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">2</text>
+    
+      <line x1="809.50" y1="36" x2="809.50" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="809.50" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">4</text>
+    
+      <line x1="869.00" y1="36" x2="869.00" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="869.00" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">6</text>
+    
+      <line x1="928.50" y1="36" x2="928.50" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="928.50" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">8</text>
+    
+      <line x1="988.00" y1="36" x2="988.00" y2="196.00" stroke="#d6d3d1" stroke-width="1" />
+      <text x="988.00" y="216.00" text-anchor="middle" font-size="11" fill="#1c1917">10</text>
+    
+        <rect x="750" y="36" width="238" height="160" fill="none" stroke="#44403c" stroke-width="1.2" />
+        <text x="869.00" y="230.00" text-anchor="middle" font-size="12" fill="#1c1917">Query keywords</text>
+        <text x="706.00" y="116.00" text-anchor="middle" transform="rotate(-90 706.00 116.00)" font-size="12" fill="#1c1917">Latency (ms, log scale)</text>
+        
+      <line x1="756.00" y1="20.00" x2="776.00" y2="20.00" stroke="#0f766e" stroke-width="2.5" />
+      <circle cx="766.00" cy="20.00" r="3.5" fill="#0f766e" />
+      <text x="782.00" y="24.00" font-size="11" fill="#1c1917">PrivSearch</text>
+      <line x1="860.00" y1="20.00" x2="880.00" y2="20.00" stroke="#b45309" stroke-width="2.5" />
+      <circle cx="870.00" cy="20.00" r="3.5" fill="#b45309" />
+      <text x="886.00" y="24.00" font-size="11" fill="#1c1917">SeaCQ</text>
+    
+        <path d="M 750.00 180.94 L 809.50 174.93 L 869.00 173.03 L 928.50 171.23 L 988.00 167.56" fill="none" stroke="#0f766e" stroke-width="2.5" /><path d="M 750.00 56.33 L 809.50 56.64 L 869.00 56.64 L 928.50 56.34 L 988.00 56.04" fill="none" stroke="#b45309" stroke-width="2.5" />
+        
+      <circle cx="750.00" cy="180.94" r="3.5" fill="#0f766e" />
+    
+      <circle cx="809.50" cy="174.93" r="3.5" fill="#0f766e" />
+    
+      <circle cx="869.00" cy="173.03" r="3.5" fill="#0f766e" />
+    
+      <circle cx="928.50" cy="171.23" r="3.5" fill="#0f766e" />
+    
+      <circle cx="988.00" cy="167.56" r="3.5" fill="#0f766e" />
+    
+      <circle cx="750.00" cy="56.33" r="3.5" fill="#b45309" />
+    
+      <circle cx="809.50" cy="56.64" r="3.5" fill="#b45309" />
+    
+      <circle cx="869.00" cy="56.64" r="3.5" fill="#b45309" />
+    
+      <circle cx="928.50" cy="56.34" r="3.5" fill="#b45309" />
+    
+      <circle cx="988.00" cy="56.04" r="3.5" fill="#b45309" />
+    
+      </g>
+    
+</svg>

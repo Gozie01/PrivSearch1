@@ -1,0 +1,663 @@
+{
+  "generated_at": "2026-09-10T11:39:56.819Z",
+  "dataset": "enron",
+  "corpus_label": "Enron-derived",
+  "trials": 50,
+  "update_sizes": [
+    1,
+    5,
+    10,
+    25,
+    50
+  ],
+  "description": "Stale-proof rejection: old witness verified against updated accumulator root. rejection_rate=1 means the old proof is always correctly rejected.",
+  "summary_by_keyword_count": [
+    {
+      "keyword_count": 2,
+      "workload_count": 2,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23733599999977742
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23179399999789893
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2331290000019362
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23625699999916833
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23785000000381842
+        }
+      ]
+    },
+    {
+      "keyword_count": 4,
+      "workload_count": 2,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2509839999995893
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23351999999780673
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24586400000029243
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2455190000019502
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24557900000014343
+        }
+      ]
+    },
+    {
+      "keyword_count": 6,
+      "workload_count": 2,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24052700000291224
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2443850000022212
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23665199999988545
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24178499999805353
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23694800000346733
+        }
+      ]
+    },
+    {
+      "keyword_count": 8,
+      "workload_count": 2,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.26219000000099185
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2487129999982426
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2570960000011837
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2480380000016885
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.255519000000204
+        }
+      ]
+    },
+    {
+      "keyword_count": 10,
+      "workload_count": 2,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2682299999980023
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2332419999979902
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23035599999770057
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23708400000003166
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23091400000150317
+        }
+      ]
+    }
+  ],
+  "per_workload_results": [
+    {
+      "query_id": "AQ2_001",
+      "query_type": "and_2",
+      "keyword_count": 2,
+      "result_count": 10,
+      "posting_list_size": 124,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2473279999999795,
+          "detection_ms_median": 0.24080000002868474,
+          "detection_ms_min": 0.23229999997420236,
+          "detection_ms_max": 0.35729999997420236
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23537999999593012,
+          "detection_ms_median": 0.23229999997420236,
+          "detection_ms_min": 0.22960000002058223,
+          "detection_ms_max": 0.30910000001313165
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23702800000435673,
+          "detection_ms_median": 0.23410000000149012,
+          "detection_ms_min": 0.2312000000383705,
+          "detection_ms_max": 0.3127000000094995
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23810599999618717,
+          "detection_ms_median": 0.23369999998249114,
+          "detection_ms_min": 0.23129999998491257,
+          "detection_ms_max": 0.34239999996498227
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2343300000031013,
+          "detection_ms_median": 0.23310000001220033,
+          "detection_ms_min": 0.22940000001108274,
+          "detection_ms_max": 0.24989999999525025
+        }
+      ]
+    },
+    {
+      "query_id": "AQ2_002",
+      "query_type": "and_2",
+      "keyword_count": 2,
+      "result_count": 10,
+      "posting_list_size": 120,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.22734399999957533,
+          "detection_ms_median": 0.22570000000996515,
+          "detection_ms_min": 0.22279999998863786,
+          "detection_ms_max": 0.25280000001657754
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.22820799999986774,
+          "detection_ms_median": 0.22529999999096617,
+          "detection_ms_min": 0.22100000001955777,
+          "detection_ms_max": 0.31330000003799796
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2292299999995157,
+          "detection_ms_median": 0.22860000003129244,
+          "detection_ms_min": 0.22240000002784654,
+          "detection_ms_max": 0.25109999999403954
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23440800000214948,
+          "detection_ms_median": 0.22590000001946464,
+          "detection_ms_min": 0.22190000000409782,
+          "detection_ms_max": 0.3841000000247732
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24137000000453554,
+          "detection_ms_median": 0.22710000001825392,
+          "detection_ms_min": 0.22159999998984858,
+          "detection_ms_max": 0.5342999999993481
+        }
+      ]
+    },
+    {
+      "query_id": "AQ4_001",
+      "query_type": "and_4",
+      "keyword_count": 4,
+      "result_count": 10,
+      "posting_list_size": 408,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2557680000003893,
+          "detection_ms_median": 0.24369999999180436,
+          "detection_ms_min": 0.23910000000614673,
+          "detection_ms_max": 0.4076999999815598
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24244599999859928,
+          "detection_ms_median": 0.2412999999942258,
+          "detection_ms_min": 0.23940000002039596,
+          "detection_ms_max": 0.2562000000034459
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24825999999884515,
+          "detection_ms_median": 0.24249999999301508,
+          "detection_ms_min": 0.23849999997764826,
+          "detection_ms_max": 0.34179999999469146
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2503819999983534,
+          "detection_ms_median": 0.2455000000190921,
+          "detection_ms_min": 0.240300000004936,
+          "detection_ms_max": 0.35610000003362074
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.26492199999978766,
+          "detection_ms_median": 0.248299999977462,
+          "detection_ms_min": 0.23949999996693805,
+          "detection_ms_max": 0.376700000022538
+        }
+      ]
+    },
+    {
+      "query_id": "AQ4_002",
+      "query_type": "and_4",
+      "keyword_count": 4,
+      "result_count": 10,
+      "posting_list_size": 261,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24619999999878928,
+          "detection_ms_median": 0.22519999998621643,
+          "detection_ms_min": 0.22040000004926696,
+          "detection_ms_max": 0.6233999999822117
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.22459399999701418,
+          "detection_ms_median": 0.22380000003613532,
+          "detection_ms_min": 0.22029999998630956,
+          "detection_ms_max": 0.25919999997131526
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2434680000017397,
+          "detection_ms_median": 0.22299999999813735,
+          "detection_ms_min": 0.22030000004451722,
+          "detection_ms_max": 0.5803000000305474
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24065600000554696,
+          "detection_ms_median": 0.221300000033807,
+          "detection_ms_min": 0.2196999999578111,
+          "detection_ms_max": 0.5650000000023283
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.22623600000049918,
+          "detection_ms_median": 0.2233000000123866,
+          "detection_ms_min": 0.22030000004451722,
+          "detection_ms_max": 0.2641000000294298
+        }
+      ]
+    },
+    {
+      "query_id": "AQ6_001",
+      "query_type": "and_6",
+      "keyword_count": 6,
+      "result_count": 10,
+      "posting_list_size": 408,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2428320000017993,
+          "detection_ms_median": 0.2414000000571832,
+          "detection_ms_min": 0.23999999999068677,
+          "detection_ms_max": 0.2554000000236556
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.25075000000069847,
+          "detection_ms_median": 0.24360000004526228,
+          "detection_ms_min": 0.23999999999068677,
+          "detection_ms_max": 0.3202000000164844
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24747599999886005,
+          "detection_ms_median": 0.24640000000363216,
+          "detection_ms_min": 0.24310000002151355,
+          "detection_ms_max": 0.25959999999031425
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.25733799999696205,
+          "detection_ms_median": 0.24469999998109415,
+          "detection_ms_min": 0.23900000000139698,
+          "detection_ms_max": 0.3813999999547377
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24797600000631065,
+          "detection_ms_median": 0.24660000001313165,
+          "detection_ms_min": 0.24259999999776483,
+          "detection_ms_max": 0.279999999969732
+        }
+      ]
+    },
+    {
+      "query_id": "AQ6_002",
+      "query_type": "and_6",
+      "keyword_count": 6,
+      "result_count": 10,
+      "posting_list_size": 1480,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2382220000040252,
+          "detection_ms_median": 0.22690000000875443,
+          "detection_ms_min": 0.22110000002430752,
+          "detection_ms_max": 0.3734999999869615
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2380200000037439,
+          "detection_ms_median": 0.22700000001350418,
+          "detection_ms_min": 0.22100000001955777,
+          "detection_ms_max": 0.3614999999990687
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.22582800000091083,
+          "detection_ms_median": 0.22460000001592562,
+          "detection_ms_min": 0.2209999999613501,
+          "detection_ms_max": 0.2565999999642372
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.22623199999914503,
+          "detection_ms_median": 0.22269999998388812,
+          "detection_ms_min": 0.22029999998630956,
+          "detection_ms_max": 0.27929999999469146
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.22592000000062398,
+          "detection_ms_median": 0.22220000001834705,
+          "detection_ms_min": 0.21989999996731058,
+          "detection_ms_max": 0.29210000002058223
+        }
+      ]
+    },
+    {
+      "query_id": "AQ8_001",
+      "query_type": "and_8",
+      "keyword_count": 8,
+      "result_count": 10,
+      "posting_list_size": 2412,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.25796400000108405,
+          "detection_ms_median": 0.24179999995976686,
+          "detection_ms_min": 0.23599999997531995,
+          "detection_ms_max": 0.367000000027474
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24871799999615177,
+          "detection_ms_median": 0.24290000001201406,
+          "detection_ms_min": 0.2368000000133179,
+          "detection_ms_max": 0.3426000000326894
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24259800000232645,
+          "detection_ms_median": 0.24119999998947605,
+          "detection_ms_min": 0.23819999996339902,
+          "detection_ms_max": 0.27759999997215346
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24770600000047124,
+          "detection_ms_median": 0.24120000004768372,
+          "detection_ms_min": 0.23690000001806766,
+          "detection_ms_max": 0.3093999999691732
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2537959999998566,
+          "detection_ms_median": 0.24390000000130385,
+          "detection_ms_min": 0.23900000000139698,
+          "detection_ms_max": 0.5161999999545515
+        }
+      ]
+    },
+    {
+      "query_id": "AQ8_002",
+      "query_type": "and_8",
+      "keyword_count": 8,
+      "result_count": 10,
+      "posting_list_size": 173,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.26641600000089966,
+          "detection_ms_median": 0.24969999998575076,
+          "detection_ms_min": 0.2393999999621883,
+          "detection_ms_max": 0.3258999999961816
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2487080000003334,
+          "detection_ms_median": 0.2440000000060536,
+          "detection_ms_min": 0.23910000000614673,
+          "detection_ms_max": 0.33000000001629815
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.27159400000004097,
+          "detection_ms_median": 0.24390000000130385,
+          "detection_ms_min": 0.23929999995743856,
+          "detection_ms_max": 0.4821999999694526
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24837000000290574,
+          "detection_ms_median": 0.24119999998947605,
+          "detection_ms_min": 0.2395000000251457,
+          "detection_ms_max": 0.3134999999892898
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.25724200000055136,
+          "detection_ms_median": 0.24510000000009313,
+          "detection_ms_min": 0.24009999999543652,
+          "detection_ms_max": 0.7191000000457279
+        }
+      ]
+    },
+    {
+      "query_id": "AQ10_001",
+      "query_type": "and_10",
+      "keyword_count": 10,
+      "result_count": 10,
+      "posting_list_size": 1941,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.30794799999799577,
+          "detection_ms_median": 0.2323999999789521,
+          "detection_ms_min": 0.22620000003371388,
+          "detection_ms_max": 1.106499999994412
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23233599999570287,
+          "detection_ms_median": 0.22769999998854473,
+          "detection_ms_min": 0.2258000000147149,
+          "detection_ms_max": 0.3018000000156462
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23261999999755062,
+          "detection_ms_median": 0.2281000000075437,
+          "detection_ms_min": 0.2258000000147149,
+          "detection_ms_max": 0.30560000002151355
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.24545400000293738,
+          "detection_ms_median": 0.23019999999087304,
+          "detection_ms_min": 0.22779999999329448,
+          "detection_ms_max": 0.4332000000285916
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23366600000066684,
+          "detection_ms_median": 0.22869999997783452,
+          "detection_ms_min": 0.22460000001592562,
+          "detection_ms_max": 0.30819999997038394
+        }
+      ]
+    },
+    {
+      "query_id": "AQ10_002",
+      "query_type": "and_10",
+      "keyword_count": 10,
+      "result_count": 10,
+      "posting_list_size": 1480,
+      "by_delta": [
+        {
+          "delta": 1,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.22851199999800884,
+          "detection_ms_median": 0.22270000004209578,
+          "detection_ms_min": 0.21959999995306134,
+          "detection_ms_max": 0.3710999999893829
+        },
+        {
+          "delta": 5,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.23414800000027752,
+          "detection_ms_median": 0.2238999999826774,
+          "detection_ms_min": 0.22120000002905726,
+          "detection_ms_max": 0.35790000000270084
+        },
+        {
+          "delta": 10,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.22809199999785051,
+          "detection_ms_median": 0.2240999999921769,
+          "detection_ms_min": 0.22089999995660037,
+          "detection_ms_max": 0.38980000000447035
+        },
+        {
+          "delta": 25,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.22871399999712594,
+          "detection_ms_median": 0.22440000000642613,
+          "detection_ms_min": 0.2201999999815598,
+          "detection_ms_max": 0.29540000000270084
+        },
+        {
+          "delta": 50,
+          "rejection_rate": 1,
+          "detection_ms_mean": 0.2281620000023395,
+          "detection_ms_median": 0.22529999999096617,
+          "detection_ms_min": 0.2211999999708496,
+          "detection_ms_max": 0.28999999997904524
+        }
+      ]
+    }
+  ]
+}

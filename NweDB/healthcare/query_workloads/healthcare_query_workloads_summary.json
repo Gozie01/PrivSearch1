@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-09-10T05:41:43.433Z",
+  "input_root": "NweDB\\healthcare\\inverted_index",
+  "output_root": "NweDB\\healthcare\\query_workloads",
+  "candidate_keywords": {
+    "total": 240,
+    "by_bucket": {
+      "rare": 25,
+      "low": 30,
+      "medium": 35,
+      "high": 150
+    }
+  },
+  "workloads": {
+    "single_keyword_queries": {
+      "total": 240,
+      "by_bucket": {
+        "rare": 25,
+        "low": 30,
+        "medium": 35,
+        "high": 150
+      }
+    },
+    "and_queries": {
+      "total": 54,
+      "and_2": 24,
+      "and_4": 12,
+      "and_6": 6,
+      "and_8": 6,
+      "and_10": 6,
+      "h2h_result_floor": 50
+    },
+    "or_queries": {
+      "total": 36,
+      "or_2": 24,
+      "or_3": 12
+    },
+    "or_of_and_queries": {
+      "total": 12
+    },
+    "range_queries": {
+      "total": 20,
+      "range_year_2": 4,
+      "range_year_3": 2,
+      "range_month_1": 8,
+      "range_month_3": 6
+    },
+    "fuzzy_queries": {
+      "total": 12
+    },
+    "semantic_queries": {
+      "total": 12
+    }
+  }
+}

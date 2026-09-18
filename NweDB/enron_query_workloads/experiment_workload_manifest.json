@@ -1,0 +1,137 @@
+{
+  "generated_at": "2026-09-10T05:08:32.715Z",
+  "dataset": "Enron Email Corpus",
+  "dataset_root": "NweDB/enron_processed",
+  "index_root": "NweDB/enron_inverted_index",
+  "workload_root": "NweDB/enron_query_workloads",
+  "experiment_mapping": [
+    {
+      "experiment_set": "EXP-2 Part B",
+      "paper_role": "SeaCQ-style encrypted conjunctive baseline",
+      "recommended_files": [
+        "single_keyword_queries.csv",
+        "and_queries.csv"
+      ],
+      "recommended_query_types": [
+        "single_keyword",
+        "and_2",
+        "and_4",
+        "and_6",
+        "and_8",
+        "and_10",
+        "and_5"
+      ],
+      "counts": {
+        "single_keyword": 150,
+        "and_2": 40,
+        "and_4": 20,
+        "and_5": 20,
+        "and_6": 20,
+        "and_8": 20,
+        "and_10": 20
+      },
+      "notes": [
+        "Use and_2, and_4, and_6, and_8, and_10 for direct SeaCQ keyword-count sweep alignment.",
+        "Keep and_5 for internal interpolation and continuity with earlier PrivSearch prototype runs."
+      ]
+    },
+    {
+      "experiment_set": "EXP-2 Part C",
+      "paper_role": "PrivSearch encrypted disjunctive extension",
+      "recommended_files": [
+        "or_queries.csv",
+        "or_of_and_queries.csv"
+      ],
+      "recommended_query_types": [
+        "or_2",
+        "or_3",
+        "or_of_and"
+      ],
+      "counts": {
+        "or_2": 40,
+        "or_3": 20,
+        "or_of_and": 20
+      }
+    },
+    {
+      "experiment_set": "EXP-4 Part A",
+      "paper_role": "Clause-count sweep for authenticated OR search",
+      "recommended_files": [
+        "or_queries.csv",
+        "or_of_and_queries.csv"
+      ],
+      "recommended_query_types": [
+        "or_2",
+        "or_3",
+        "or_of_and"
+      ],
+      "notes": [
+        "Use or_2 rows for 2-clause measurements",
+        "Use or_3 rows for 3-clause measurements",
+        "Use or_of_and rows for DNF-style OR-of-conjunction evaluation"
+      ]
+    },
+    {
+      "experiment_set": "EXP-4 Part B",
+      "paper_role": "PrivSearch authenticated range-search extension",
+      "recommended_files": [
+        "range_queries.csv"
+      ],
+      "recommended_query_types": [
+        "range_year_2",
+        "range_year_3",
+        "range_year_5",
+        "range_month_1",
+        "range_month_3",
+        "range_month_6"
+      ],
+      "counts": {
+        "range_year_2": 6,
+        "range_year_3": 4,
+        "range_year_5": 2,
+        "range_month_1": 12,
+        "range_month_3": 10,
+        "range_month_6": 8
+      },
+      "notes": [
+        "These queries evaluate contiguous year-range retrieval over Enron email metadata.",
+        "Each range is represented as a union over authenticated per-year postings.",
+        "Month-level windows provide a finer-grained cardinality sweep inside the dense 1999-2002 interval."
+      ]
+    },
+    {
+      "experiment_set": "EXP-4 Part C",
+      "paper_role": "PrivSearch fuzzy keyword extension",
+      "recommended_files": [
+        "fuzzy_queries.csv"
+      ],
+      "recommended_query_types": [
+        "fuzzy_1"
+      ],
+      "counts": {
+        "fuzzy_1": 24
+      },
+      "notes": [
+        "Each fuzzy query uses a one-edit variant and resolves to a curated authenticated keyword-expansion set.",
+        "This benchmark isolates fuzzy trapdoor-expansion cost from later semantic-search work."
+      ]
+    },
+    {
+      "experiment_set": "EXP-4 Part D",
+      "paper_role": "PrivSearch semantic search v1 extension",
+      "recommended_files": [
+        "semantic_queries.csv"
+      ],
+      "recommended_query_types": [
+        "semantic_v1"
+      ],
+      "counts": {
+        "semantic_v1": 12
+      },
+      "notes": [
+        "Semantic v1 uses concept-expanded authenticated retrieval rather than embeddings or neural encoders.",
+        "This makes semantic search executable in the current PrivSearch prototype while keeping verification tractable."
+      ]
+    }
+  ]
+}

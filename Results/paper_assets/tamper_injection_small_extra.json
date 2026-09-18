@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-09-09T02:37:37.727Z",
+  "note": "Supplemental: s∈{1,2} × small bucket only",
+  "t_values": [
+    1,
+    2,
+    5,
+    10
+  ],
+  "s_values": [
+    1,
+    2
+  ],
+  "trials_per_cell": 100,
+  "results": [
+    {
+      "t": 1,
+      "s": 1,
+      "bucket": "small",
+      "trials": 100,
+      "R_mean": 17,
+      "empirical_detect_rate": 0.17,
+      "theoretical_detect_rate": 0.05882352941176483,
+      "gap": 0.11117647058823518
+    },
+    {
+      "t": 1,
+      "s": 2,
+      "bucket": "small",
+      "trials": 100,
+      "R_mean": 17,
+      "empirical_detect_rate": 0.32,
+      "theoretical_detect_rate": 0.11764705882352944,
+      "gap": 0.20235294117647057
+    },
+    {
+      "t": 2,
+      "s": 1,
+      "bucket": "small",
+      "trials": 100,
+      "R_mean": 18,
+      "empirical_detect_rate": 0.26,
+      "theoretical_detect_rate": 0.11111111111111105,
+      "gap": 0.14888888888888896
+    },
+    {
+      "t": 2,
+      "s": 2,
+      "bucket": "small",
+      "trials": 100,
+      "R_mean": 18,
+      "empirical_detect_rate": 0.4,
+      "theoretical_detect_rate": 0.21568627450980393,
+      "gap": 0.1843137254901961
+    },
+    {
+      "t": 5,
+      "s": 1,
+      "bucket": "small",
+      "trials": 100,
+      "R_mean": 21,
+      "empirical_detect_rate": 0.32,
+      "theoretical_detect_rate": 0.23809523809523814,
+      "gap": 0.08190476190476187
+    },
+    {
+      "t": 5,
+      "s": 2,
+      "bucket": "small",
+      "trials": 100,
+      "R_mean": 21,
+      "empirical_detect_rate": 0.54,
+      "theoretical_detect_rate": 0.4285714285714286,
+      "gap": 0.11142857142857143
+    },
+    {
+      "t": 10,
+      "s": 1,
+      "bucket": "small",
+      "trials": 100,
+      "R_mean": 25,
+      "empirical_detect_rate": 0.57,
+      "theoretical_detect_rate": 0.3999999999999999,
+      "gap": 0.17000000000000004
+    },
+    {
+      "t": 10,
+      "s": 2,
+      "bucket": "small",
+      "trials": 100,
+      "R_mean": 25,
+      "empirical_detect_rate": 0.68,
+      "theoretical_detect_rate": 0.65,
+      "gap": 0.030000000000000027
+    }
+  ]
+}

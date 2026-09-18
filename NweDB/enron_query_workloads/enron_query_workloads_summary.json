@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-09-10T05:08:32.715Z",
+  "input_root": "NweDB\\enron_inverted_index",
+  "output_root": "NweDB\\enron_query_workloads",
+  "candidate_keywords": {
+    "total": 150,
+    "by_bucket": {
+      "rare": 30,
+      "low": 30,
+      "medium": 40,
+      "high": 50
+    }
+  },
+  "workloads": {
+    "single_keyword_queries": {
+      "total": 150,
+      "by_bucket": {
+        "rare": 30,
+        "low": 30,
+        "medium": 40,
+        "high": 50
+      }
+    },
+    "and_queries": {
+      "total": 140,
+      "and_2": 40,
+      "and_4": 20,
+      "and_5": 20,
+      "and_6": 20,
+      "and_8": 20,
+      "and_10": 20
+    },
+    "or_queries": {
+      "total": 60,
+      "or_2": 40,
+      "or_3": 20
+    },
+    "or_of_and_queries": {
+      "total": 20
+    },
+    "range_queries": {
+      "total": 42,
+      "range_year_2": 6,
+      "range_year_3": 4,
+      "range_year_5": 2,
+      "range_month_1": 12,
+      "range_month_3": 10,
+      "range_month_6": 8
+    },
+    "fuzzy_queries": {
+      "total": 24,
+      "fuzzy_1": 24
+    },
+    "semantic_queries": {
+      "total": 12,
+      "semantic_v1": 12
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="470" viewBox="0 0 920 470">
+<style>
+text { font-family: Arial, sans-serif; fill: #1f2933; }
+.title { font-size: 18px; font-weight: 700; }
+.label { font-size: 12px; }
+.small { font-size: 11px; }
+.axisLabel { font-size: 12px; font-weight: 700; }
+.axis { stroke: #5b6570; stroke-width: 1; }
+</style>
+<text x="24" y="28" class="title">Figure 11. Healthcare Query-Family Latency Components</text>
+<line x1="70" y1="70" x2="70" y2="320" class="axis" />
+<line x1="70" y1="320" x2="870" y2="320" class="axis" />
+<line x1="70" y1="320" x2="870" y2="320" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="324" text-anchor="end" class="small">0.0</text>
+<line x1="70" y1="257.5" x2="870" y2="257.5" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="261.5" text-anchor="end" class="small">74.2</text>
+<line x1="70" y1="195" x2="870" y2="195" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="199" text-anchor="end" class="small">148.4</text>
+<line x1="70" y1="132.5" x2="870" y2="132.5" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="136.5" text-anchor="end" class="small">222.5</text>
+<line x1="70" y1="70" x2="870" y2="70" stroke="#d9e2ec" stroke-width="1" />
+<text x="60" y="74" text-anchor="end" class="small">296.7</text>
+<text x="120" y="344" text-anchor="middle" class="label">single</text>
+<rect x="86.66666666666666" y="315.5197712238805" width="29.333333333333336" height="4.4802287761195" fill="#0f766e" rx="3" />
+<rect x="120" y="301.524578593717" width="29.333333333333336" height="18.475421406282997" fill="#d97706" rx="3" />
+<text x="220" y="344" text-anchor="middle" class="label">and_2</text>
+<rect x="186.66666666666666" y="319.99021469252506" width="29.333333333333336" height="0.009785307474935018" fill="#0f766e" rx="3" />
+<rect x="220" y="268.0462713510292" width="29.333333333333336" height="51.9537286489708" fill="#d97706" rx="3" />
+<text x="320" y="344" text-anchor="middle" class="label">and_4</text>
+<rect x="286.6666666666667" y="319.99320638335865" width="29.333333333333336" height="0.0067936166413371715" fill="#0f766e" rx="3" />
+<rect x="320" y="190.95256983602766" width="29.333333333333336" height="129.04743016397234" fill="#d97706" rx="3" />
+<text x="420" y="344" text-anchor="middle" class="label">or_2</text>
+<rect x="386.6666666666667" y="319.4521126514648" width="29.333333333333336" height="0.5478873485351894" fill="#0f766e" rx="3" />
+<rect x="420" y="319.8102119359282" width="29.333333333333336" height="0.18978806407180634" fill="#d97706" rx="3" />
+<text x="520" y="344" text-anchor="middle" class="label">fuzzy</text>
+<rect x="486.6666666666667" y="319.14264782660524" width="29.333333333333336" height="0.8573521733947479" fill="#0f766e" rx="3" />
+<rect x="520" y="319.8437727953176" width="29.333333333333336" height="0.15622720468242962" fill="#d97706" rx="3" />
+<text x="620" y="344" text-anchor="middle" class="label">semantic</text>
+<rect x="586.6666666666666" y="319.35288484527337" width="29.333333333333336" height="0.6471151547266543" fill="#0f766e" rx="3" />
+<rect x="620" y="317.5267703811808" width="29.333333333333336" height="2.4732296188191687" fill="#d97706" rx="3" />
+<text x="720" y="344" text-anchor="middle" class="label">month_1</text>
+<rect x="686.6666666666666" y="308.85297996292667" width="29.333333333333336" height="11.147020037073306" fill="#0f766e" rx="3" />
+<rect x="720" y="273.48002443747134" width="29.333333333333336" height="46.51997556252865" fill="#d97706" rx="3" />
+<text x="820" y="344" text-anchor="middle" class="label">year_2</text>
+<rect x="786.6666666666666" y="258.9680030682308" width="29.333333333333336" height="61.0319969317692" fill="#0f766e" rx="3" />
+<rect x="820" y="70" width="29.333333333333336" height="250" fill="#d97706" rx="3" />
+<rect x="80" y="408" width="14" height="14" fill="#0f766e" rx="2" />
+<text x="102" y="420" class="label">Search ms</text>
+<rect x="260" y="408" width="14" height="14" fill="#d97706" rx="2" />
+<text x="282" y="420" class="label">Verify ms</text>
+<text x="470" y="370" text-anchor="middle" class="axisLabel">Representative query families</text>
+<text x="22" y="195" text-anchor="middle" transform="rotate(-90 22 195)" class="axisLabel">Mean latency (ms)</text>
+</svg>

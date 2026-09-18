@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-01T01:50:40.424Z",
+  "source": {
+    "enforcement_input": "C:\\Users\\Gozie\\Desktop\\Datasets\\openFDA\\drug-enforcement\\drug-enforcement-0001-of-0001.json",
+    "ndc_input": "C:\\Users\\Gozie\\Desktop\\Datasets\\openFDA\\drug-ndc\\drug-ndc-0001-of-0001.json"
+  },
+  "counts": {
+    "enforcement_rows": 17755,
+    "ndc_rows": 136437,
+    "recall_product_rows": 24269,
+    "unique_recall_numbers": 17754,
+    "unique_product_ndcs": 134033
+  },
+  "recall_classification_breakdown": {
+    "Class III": 1699,
+    "Class I": 1730,
+    "Class II": 14326
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "healthcare_file_sha256": "f090bc661183a8fcae960246c34a153fdf54ee46428af075839d1bf2348f1bb7",
+  "enron_stopwords_fragment_sha256": "921b4e1352d6518dfdc3c19a0892e50942c0d2f0813296bcca1c2aae48554663",
+  "enron_tokenizer_fragment_sha256": "d60b47f9550fb1eb0a60090b8cc86ca199a044d6b886ec61b0ca7f4fdeca37d6"
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "privsearch-real-privacy-builder-validation-1",
+  "checks": 19,
+  "passed": 19,
+  "failed": 0,
+  "builder_runtime": {
+    "node": "v24.19.0",
+    "platform": "linux"
+  },
+  "source_files_pinned": 193,
+  "fixture_cells": 264,
+  "fixture_roles": 72,
+  "fixture_targets": 4,
+  "real_planned_cells": 792,
+  "real_planned_roles": 216,
+  "real_planned_targets": 12,
+  "real_corpus_attack_rates_measured_in_builder": false,
+  "windows_powershell_executed": false,
+  "windows_gate_repeats_checks": true,
+  "service_connections": 0,
+  "transactions": 0,
+  "application_files_installed_or_changed": 0,
+  "scope": "Executable workflow/role/scoring/failure validation on audited tiny fixtures. Not an attack-security proof or measured healthcare/Enron outcome.",
+  "packaged_end_to_end": {
+    "status": "PASSED",
+    "cells": 264,
+    "attacker_roles": 72,
+    "fresh_targets": 4,
+    "unicode_and_space_package_path": true,
+    "independent_report_reconciliation": [
+      "plan/start/results",
+      "immutable progress",
+      "JSONL",
+      "CSV",
+      "recomputed aggregate rates",
+      "candidate histograms",
+      "private-value redaction",
+      "source hashes",
+      "runtime cleanup"
+    ]
+  }
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "original_path": "Results/revision_v3/stage20_live_parallel_2026-10-20T04-44-51-896Z_894317c3/summary.json",
+    "sha256": "f4bd6d7c5dee636430f5c636580dbaf5d58419506bba455089b7f2a2aeae8e37",
+    "status": "STAGE20_LIVE_COMPLETED_WITH_FAILURES",
+    "accounting": {
+      "planned": 1060,
+      "started": 1060,
+      "completed": 1060,
+      "verified": 1027,
+      "expected_rejections": 32,
+      "measured_attempts": 960,
+      "measured_verified": 959,
+      "measured_failed": 1,
+      "unexpected_controls": 0,
+      "not_started": 0,
+      "unfinished": 0
+    },
+    "measured_attempts": null,
+    "warmup_attempts": null
+  },
+  {
+    "original_path": "Results/revision_v3/stage19_parallel_pilot_2026-10-20T02-58-33-094Z_fa6e3ec0/summary.json",
+    "sha256": "ca2edc28179c50b979f8182f9ec155cdd5644c2997a0b68f6da148e83460efe4",
+    "status": "STAGE19_CONTROLLED_OPTIMIZATION_PILOT_COMPLETE",
+    "accounting": {
+      "planned": 118,
+      "started": 118,
+      "completed": 118,
+      "verified": 102,
+      "expected_rejections": 16,
+      "measured_attempts": 60,
+      "measured_verified": 60,
+      "measured_failed": 0,
+      "not_started": 0,
+      "unfinished": 0
+    },
+    "measured_attempts": null,
+    "warmup_attempts": null
+  },
+  {
+    "original_path": "Results/revision_v3/privacy_mitigation_fix2_20261021_035817_073_4e0cc302/summary.json",
+    "sha256": "9ac9b12cf96c6d6788fc44794232a4ad5e57ce16e6cfdffc45ef9b60dc14396a",
+    "status": "PRIVACY_MITIGATION_REAL_CORPUS_COMPLETED",
+    "accounting": {
+      "planned": 1584,
+      "started": 1584,
+      "completed": 1584,
+      "successful_cells": 1584,
+      "failed_cells": 0,
+      "not_started": 0,
+      "unfinished": 0
+    },
+    "measured_attempts": null,
+    "warmup_attempts": null
+  },
+  {
+    "original_path": "Results/revision_v3/stage18_live_fix1_2026-10-19T23-53-00-978Z_801fe85e/summary.json",
+    "sha256": "e768d9e8a9f2aaaf8a445714d3cfccb9c6bacd66de1c520af889cdac0defca8a",
+    "status": "STAGE18_LIVE_COMPLETED",
+    "accounting": {
+      "planned": 1016,
+      "started": 1016,
+      "completed": 1016,
+      "verified": 984,
+      "expected_rejections": 32,
+      "measured_attempts": 920,
+      "measured_verified": 920,
+      "measured_failed": 0,
+      "unexpected_controls": 0,
+      "not_started": 0,
+      "unfinished": 0
+    },
+    "measured_attempts": null,
+    "warmup_attempts": null
+  },
+  {
+    "original_path": "Results/revision_v3/stage17_remediation_fix1_2026-10-19T07-39-48-353Z_8599cccf/summary.json",
+    "sha256": "8671dc43da80b2675a8ff65b28c4cfa0616e1fb5c88c839bea26bd4c9583ef0d",
+    "status": "STAGE17_REMEDIATION_VALIDATED_WITH_OPEN_RESEARCH_REQUIREMENTS",
+    "accounting": {
+      "planned": 63,
+      "started": 63,
+      "completed": 63,
+      "verified": 47,
+      "expected_rejections": 16,
+      "failed_honest": 0,
+      "not_started": 0,
+      "unfinished": 0
+    },
+    "measured_attempts": null,
+    "warmup_attempts": null
+  },
+  {
+    "original_path": "Results/revision_v3/stage19_parallel_pilot_2026-10-20T03-24-40-951Z_08a09339/summary.json",
+    "sha256": "715f21b6b0de39499b82e3d2de2b35d15729213dd557434a221adc1d861d654c",
+    "status": "STAGE19_CONTROLLED_OPTIMIZATION_PILOT_COMPLETE",
+    "accounting": {
+      "planned": 458,
+      "started": 458,
+      "completed": 458,
+      "verified": 442,
+      "expected_rejections": 16,
+      "measured_attempts": 400,
+      "measured_verified": 400,
+      "measured_failed": 0,
+      "not_started": 0,
+      "unfinished": 0
+    },
+    "measured_attempts": null,
+    "warmup_attempts": null
+  },
+  {
+    "original_path": "Results/revision_v3/privacy_real_corpus_20261020_083441_162_d09c3d47/summary.json",
+    "sha256": "72e6ae53746daff0777057d7ee691a9a957fbe3a7c14db87fdc3d83d3ceeb6db",
+    "status": "PRIVACY_REAL_CORPUS_ATTACK_STUDY_COMPLETED",
+    "accounting": {
+      "planned": 792,
+      "started": 792,
+      "completed": 792,
+      "successful_cells": 792,
+      "failed_cells": 0,
+      "not_started": 0,
+      "unfinished": 0
+    },
+    "measured_attempts": null,
+    "warmup_attempts": null
+  },
+  {
+    "original_path": "Results/revision_v3/matched_baseline_v2_fix1_20261022_112513_697893df/matched/summary.json",
+    "sha256": "60bdb64cc901dbc541ddd522fc8f69dfd70f243b60144e48b5678bc22367de79",
+    "status": "MATCHED_STATIC_IMPLEMENTATION_COMPARISON_COMPLETE",
+    "accounting": null,
+    "measured_attempts": 900,
+    "warmup_attempts": 90
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "schema": "privsearch-stage11-approved-pins-1",
+  "stage9_summary_sha256": "eba461d284513a88e769f1c530e8a3bbc7051e1ae8bb640a82052b8b0afeabff",
+  "stage9_run_id": "e88e5147-073c-4a48-a860-d62917bdaab5",
+  "client_server_core_sha256": "c7fcaac8a17dcdda669a01c32c1761b0291452775c9b400825ab455b7de22fa0",
+  "owner_core_sha256": "86842cd1e0f8548454cf87ab08457619cf08910ad3382bc96d3716052716de11",
+  "stage10_summary_sha256": "5737036119c82ddfa5b922a5f380bb42d45738cabb5e1f7823ab56f4580cc474",
+  "stage10_run_id": "fd5b3061-249b-4d0b-a0c8-0cad8865efcf",
+  "chain_reader_sha256": "b6465a47fd7a88b12fbf0fb7851ebef09372d250d9f152e9b8db456de21b11eb"
+}

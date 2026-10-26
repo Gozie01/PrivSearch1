@@ -1,0 +1,8 @@
+{
+  "schema": "privsearch-stage6-approved-audit-pins-1",
+  "summary_sha256": "1ba4a7fd21687e095606077013790919548e2037875635dac5267adf5ee6ed19",
+  "catalog_sha256": {
+    "healthcare": "440f97d1f21486296495f455ef03f749b9f38317f14e990d4c4fc703ad3d5fd9",
+    "enron": "aa62ceff356b68affc410927f500d0ff1c2c7155824f1edf0abf6b81398168df"
+  }
+}

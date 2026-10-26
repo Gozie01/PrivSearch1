@@ -1,0 +1,23 @@
+{
+  "schema": "privsearch-stage14-reviewed-pins-1",
+  "stage13_summary_sha256": "9e6702647d5a16c88cc0f15d1728bac0c18f4e92e60e0308cc944d6f3587949f",
+  "stage13_run_id": "89d0b5b9-8299-43cc-ab35-faaa469a14cb",
+  "stage12_summary_sha256": "9ca8fe04d89c9518d097704d4107a8b5fde93de1bf1a49a856c0226e3e454195",
+  "baseline_label": "SeaCQ-basic-derived with a shared anchored payload retrieval layer",
+  "published_seacq_performance_comparison_qualified": false,
+  "full_dynamic_seacq": false,
+  "paper_privacy_equivalence_established": false,
+  "purpose": "Common output/retrieval/chain boundary conformance, without comparative timing",
+  "deployed_pins": {
+    "chainId": "900520900520",
+    "genesisHash": "afafa8c09261b056bcf4224d1b0eb87e38ec57f0f6ab36cfc0ca6548f31a576e",
+    "contract": "0xa01ffb67c4a7a0d655776598d6e93d1518567a19",
+    "owner": "0x436a09753d6137beaf731234d72827ac7900d0d1",
+    "codeHash": "7e8da336053fe5c0f4f9885a8d93319b48752b5276b6763d2ca161c38a68cf0a",
+    "finality": {
+      "kind": "confirmations",
+      "depth": 1
+    },
+    "blockSelector": "eip1898"
+  }
+}

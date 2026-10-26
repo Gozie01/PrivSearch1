@@ -1,0 +1,262 @@
+{
+  "schema": "privsearch-stage16-reviewed-claims-1",
+  "findings": [
+    {
+      "id": "F16-01",
+      "disposition": "CONDITIONAL_ARGUMENT_AND_REGRESSION",
+      "title": "Exact Boolean results relative to committed prepared postings",
+      "observation": "Coverage Merkle leaves bind token, count and full posting digest. Every ciphertext row is bound to that opening and AEAD-decrypted; the client recomputes clause intersections and their union before retrieving result payloads.",
+      "required_treatment": "Claim committed-snapshot completeness and soundness under the stated assumptions. Do not infer external source truth or universal security from attack tests.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/stage9-encrypted-search.js",
+          "symbol": "verifyResponse"
+        },
+        {
+          "path": "scripts/privsearch/stage2-completeness.js",
+          "symbol": "verifyCoverage"
+        },
+        {
+          "path": "scripts/privsearch/stage1-state.js",
+          "symbol": "bindAuditState"
+        }
+      ]
+    },
+    {
+      "id": "F16-02",
+      "disposition": "CONDITIONAL_ARGUMENT_AND_REGRESSION",
+      "title": "Authenticated full original payload release",
+      "observation": "Descriptor membership, context-bound AEAD, opaque identity and revision checks precede a second independent reader observation; no verified return occurs after a rejected release check.",
+      "required_treatment": "Retain both observations and all binding checks. An application must release only the returned verified result.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/stage9-encrypted-search.js",
+          "symbol": "release=await"
+        },
+        {
+          "path": "scripts/privsearch/stage14-boundary.js",
+          "symbol": "BasicPayloadClient"
+        },
+        {
+          "path": "scripts/privsearch/stage1-state.js",
+          "symbol": "decryptPayload"
+        }
+      ]
+    },
+    {
+      "id": "F16-03",
+      "disposition": "OPEN_CLAIM_BLOCKER",
+      "title": "No formal composed privacy theorem",
+      "observation": "The code explicitly returns formal_composed_privacy_proven false. Ciphertext full-posting openings add transcript and authorized-client disclosure beyond final matches.",
+      "required_treatment": "Specify setup, search, access, volume, update and client-disclosure leakage, an adversary game and a reduction for the actual composition before claiming simulation-based privacy.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/stage9-encrypted-search.js",
+          "symbol": "formal_composed_privacy_proven"
+        },
+        {
+          "path": "scripts/privsearch/stage9-encrypted-search.js",
+          "symbol": "decryptRow"
+        }
+      ]
+    },
+    {
+      "id": "F16-04",
+      "disposition": "OBSERVED_DISCLOSURE",
+      "title": "Repeated search linkability and public shape",
+      "observation": "A fresh nonce changes the request digest but stag, labels, selected row counts, term grouping and position tokens repeat for an identical query in a revision. Table sizes, object locators, ciphertext lengths and queried access patterns remain visible.",
+      "required_treatment": "State these as permitted leakage; do not claim query unlinkability, access-pattern hiding or volume hiding.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/stage9-encrypted-search.js",
+          "symbol": "tags"
+        },
+        {
+          "path": "scripts/privsearch/stage9-encrypted-search.js",
+          "symbol": "createRequest"
+        },
+        {
+          "path": "scripts/privsearch/stage9-encrypted-search.js",
+          "symbol": "coverage_labels"
+        }
+      ]
+    },
+    {
+      "id": "F16-05",
+      "disposition": "OPEN_BASELINE_PRIVACY_BLOCKER",
+      "title": "Basic-derived public products permit dictionary recovery",
+      "observation": "Public keyword_product integers are products of publicly recomputable keyword representatives. A server can test candidate keywords by divisibility; query_product similarly exposes nonbase terms to a candidate dictionary. The synthetic probe recovers the fixture keyword incidence multiset without private keys.",
+      "required_treatment": "Describe the profile as a scoped implementation comparison, with weaker demonstrated privacy. Do not assert privacy equivalence with PrivSearch, SeaCQ or DAKS; resolve or redesign before a matched-assurance claim.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/stage13-hardened-basic.js",
+          "symbol": "keyword_product"
+        },
+        {
+          "path": "scripts/privsearch/stage13-hardened-basic.js",
+          "symbol": "function prime"
+        },
+        {
+          "path": "scripts/privsearch/stage13-hardened-basic.js",
+          "symbol": "query_product"
+        }
+      ]
+    },
+    {
+      "id": "F16-06",
+      "disposition": "OPEN_CLAIM_BLOCKER",
+      "title": "Shared benchmark storage is not a standalone privacy deployment",
+      "observation": "The paired server receives both public search structures and a shared payload collection for the same source records. Leakage available from the basic-derived view coexists with the PrivSearch transcript.",
+      "required_treatment": "Use this deployment for matched payload/timing boundaries only; analyze standalone and co-hosted adversaries separately.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/stage14-boundary.js",
+          "symbol": "publicSnapshot"
+        },
+        {
+          "path": "scripts/privsearch/stage14-server.js",
+          "symbol": "basic"
+        }
+      ]
+    },
+    {
+      "id": "F16-07",
+      "disposition": "OPEN_PARAMETER_PROVENANCE",
+      "title": "Legacy RSA setup provenance remains unestablished",
+      "observation": "PrivSearch sampled row witnesses use the fixed modulus in audit-v2-protocol.js. Its factor generation/disposal is explicitly not independently established. Basic-derived generates a fresh 2048-bit modulus but the trusted owner uses its factors during setup.",
+      "required_treatment": "Do not claim independently verified trapdoor-free RSA setup or secure erasure. State setup trust; replace/requalify parameters if a stronger accumulator theorem is needed. Full anchored row-digest checks are a separate completeness mechanism.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/audit-v2-protocol.js",
+          "symbol": "MODULUS"
+        },
+        {
+          "path": "scripts/privsearch/stage13-hardened-basic.js",
+          "symbol": "phi="
+        },
+        {
+          "path": "scripts/privsearch/stage9-encrypted-search.js",
+          "symbol": "verifyCoverage"
+        }
+      ]
+    },
+    {
+      "id": "F16-08",
+      "disposition": "TRUST_BOUNDARY",
+      "title": "Trusted owner, key provisioning and client authorization",
+      "observation": "An owner can commit consistently encrypted replacement content. Clients hold dataset search/payload keys, rather than per-query capabilities. The signing owner and chain anchor owner are trusted; the contract has an immutable anchor owner.",
+      "required_treatment": "Limit guarantees to committed data under uncompromised authorities and private provisioning. Document dataset-wide client capability; malicious owner resistance, revocation, key rotation and compromise recovery are outside established results.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/stage9-encrypted-search.js",
+          "symbol": "KEY_NAMES"
+        },
+        {
+          "path": "scripts/privsearch/stage14-boundary.js",
+          "symbol": "provisions"
+        },
+        {
+          "path": "contracts/PrivSearchStateAnchor.sol",
+          "symbol": "immutable owner"
+        }
+      ]
+    },
+    {
+      "id": "F16-09",
+      "disposition": "TRUST_BOUNDARY",
+      "title": "Trusted RPC observation and process-local rollback state",
+      "observation": "The reader pins chain, genesis, code, owner and exact head at a coherent canonical hash. Three full observation attempts are bounded. Depth one selects latest, and watermarks live in the reader instance. A malicious/stale but coherent RPC can mislead a cold reader.",
+      "required_treatment": "Call this provisional depth-one trusted-RPC visibility. Do not claim deterministic consensus finality, light-client verification, persistent restart rollback protection or availability.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/stage10-chain-reader-fix1.js",
+          "symbol": "#watermarks"
+        },
+        {
+          "path": "scripts/privsearch/stage10-chain-reader-fix1.js",
+          "symbol": "depth===1"
+        },
+        {
+          "path": "scripts/privsearch/stage10-chain-reader-fix1.js",
+          "symbol": "requireCanonical"
+        }
+      ]
+    },
+    {
+      "id": "F16-10",
+      "disposition": "OPEN_EXTENSION_SCOPE",
+      "title": "Native prepared-token DNF differs from expansion correctness",
+      "observation": "Core metadata fixes token-dnf-v1 with expansion none. Boolean composition is implemented; Stage15 compares native conjunction, single-keyword and zero controls. Range, fuzzy and semantic answer correctness requires a separate trusted expansion definition and evidence.",
+      "required_treatment": "Claim the verified native scope. Keep expansion/model provenance and recall/precision claims unresolved until separately specified and tested.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/stage9-encrypted-search.js",
+          "symbol": "expansion:'none'"
+        },
+        {
+          "path": "scripts/privsearch/stage9-encrypted-search.js",
+          "symbol": "prepared_tokens_only"
+        }
+      ]
+    },
+    {
+      "id": "F16-11",
+      "disposition": "OPEN_EXPERIMENTAL_GAP",
+      "title": "Projected vocabulary, one machine and query-dependent work",
+      "observation": "Full source corpus scans support selected-vocabulary complete postings; the measured setup is not full vocabulary. AND-10 and AND-2 differ in results and posting volume. Concurrency uses small single-keyword jobs and one retained server process.",
+      "required_treatment": "Report selection, deferred workloads, failures and resource limits. Avoid universal speedup, independent-machine tail, full-corpus setup, multicore server and chain-TPS claims. Controlled scalability/ablation and multi-run evaluation remain open.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/stage15-study.js",
+          "symbol": "plans"
+        },
+        {
+          "path": "scripts/privsearch/stage15-study.js",
+          "symbol": "bootstrap"
+        }
+      ]
+    },
+    {
+      "id": "F16-12",
+      "disposition": "OPEN_PUBLISHED_BASELINE_QUALIFICATION",
+      "title": "Published SeaCQ and DAKS comparisons remain unqualified",
+      "observation": "Stage12 recorded author-code control failures and unmatched parameter/boundary issues. Stage13-15 implement an explicitly adapted basic-derived fixed-snapshot profile; no full dynamic SeaCQ/DAKS implementation is established.",
+      "required_treatment": "Use the exact basic-derived label and report asymmetric leakage. Obtain construction-faithful and security-qualified baselines before claiming published-scheme superiority.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/stage13-hardened-basic.js",
+          "symbol": "PROFILE"
+        },
+        {
+          "path": "scripts/privsearch/stage15-study.js",
+          "symbol": "PrivSearch / basic-derived"
+        }
+      ]
+    },
+    {
+      "id": "F16-13",
+      "disposition": "OPEN_DEPLOYMENT_AND_ASSURANCE_GAP",
+      "title": "Operational isolation and exhaustive implementation audit remain open",
+      "observation": "Separate roles under one OS user and localhost HTTP are experimental separation, not a production sandbox. No exhaustive dependency/native-runtime audit, constant-time argument, secret-memory erasure audit, authenticated remote transport deployment or independent security review has been completed.",
+      "required_treatment": "Scope the release as a research prototype. Treat these as deployment/assurance work, rather than describing the regression gate as a full certification.",
+      "source_refs": [
+        {
+          "path": "scripts/privsearch/stage14-client.js",
+          "symbol": "require"
+        },
+        {
+          "path": "scripts/privsearch/stage14-server.js",
+          "symbol": "http"
+        }
+      ]
+    }
+  ],
+  "remaining_work": [
+    "Write and independently review the exact leakage model and conditional security arguments; formal composed privacy is not established by this audit.",
+    "Resolve the intended comparison claim: the current basic-derived profile has demonstrated dictionary leakage, and published SeaCQ/full dynamic SeaCQ/DAKS qualification remains blocked.",
+    "If claiming scalability or isolated optimization benefit, run a fixed controlled matrix over document count, posting volume, query width and payload bytes, with all security checks retained. The Stage16 operation counts are explanatory, not a performance ablation.",
+    "Qualify any range/fuzzy/semantic expansion separately, or remove those end-to-end correctness claims from this implementation study.",
+    "Prepare Stage17 manuscript figures/tables, reviewer mapping and a reproducibility release using the scoped evidence; open assurance claims must remain visible."
+  ],
+  "review_scope": "Manual source review plus executable characterizations and pinned evidence reconciliation. Not exhaustive verification, a new cryptosystem proof or a dependency vulnerability scan."
+}

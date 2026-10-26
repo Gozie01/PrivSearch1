@@ -1,0 +1,14 @@
+{
+  "benchmark_files_unchanged": [
+    "run_matched.py",
+    "node-worker.js",
+    "daks-worker.py",
+    "daks_reference.py",
+    "export-audited-corpus.js",
+    "common-payload.js",
+    "common_payload.py",
+    "test_matched.py"
+  ],
+  "cause": "Windows PowerShell treats unittest successful stderr as a terminating NativeCommandError under Stop policy.",
+  "fix": "Merged child stdout/stderr captured by Python; process exit code retained."
+}

@@ -1,434 +1,114 @@
 # PrivSearch
 
-**Privacy-Preserving Authenticated Search over Hybrid Blockchain**
+Complete-result authentication for expressive encrypted search in hybrid blockchain systems.
 
-PrivSearch is a searchable symmetric encryption (SSE) system that integrates an OXT-style encrypted inverted index with an RSA accumulator anchored to an external EVM blockchain. It enables verifiable, privacy-preserving full-text search over encrypted medical and enterprise document corpora, with cryptographic proof that every returned result is genuine and complete.
+This revision packages the hash-pinned complete-posting implementation used by the Stage20 live study, the fixed matched-baseline package, and the private-replica privacy experiment. It replaces the previous README's sampled-RSA description. Historical files already in the repository are retained; only the files enumerated in `release/files.sha256.json` belong to this reviewed source batch. “Verified” here means the stated source-hash and test checks, not journal acceptance or a blanket security certification.
 
-This repository contains the complete source, benchmark suite, workload manifests, and raw results accompanying the manuscript:
+## Mechanism and boundaries
 
-> C. Nadiekwe, "PrivSearch: Privacy-Preserving Authenticated Search with RSA Accumulators for Hybrid Blockchain Systems," *IEEE Transactions on Dependable and Secure Computing* (under review), 2026.
+The owner commits encrypted posting manifests, query-planning policy, and payload descriptors to a versioned state. The trusted client authenticates complete posting openings, reconstructs exact token-DNF results, and verifies the corresponding original payload bytes. MongoDB stores the encrypted index and descriptors; MinIO stores encrypted payloads. An independent client-side reader checks the intended PureChain state before verification and before release. Querying an established revision requires no new anchoring transaction.
 
----
+Supported planning operations are conjunction, disjunction, OR-of-AND, prepared temporal ranges, bounded fuzzy expansion, and owner-declared alias unions. Alias retrieval is not embedding ranking or unrestricted semantic recall. Completeness assumes honest indexing and trusted planning. Depth-one RPC observations establish conditional state consistency, not deterministic consensus finality. Client-local request binding is not durable distributed replay prevention.
 
-## Table of Contents
+Remote encrypted search retains structural leakage. The separate private replica downloads the complete selected encrypted snapshot and executes queries locally. Its empty query-phase HTTP projection applies only to the capsule endpoint after trusted bootstrap; whole-system timing privacy, live replica freshness, incremental refresh, and revocation are not established.
 
-1. [System Overview](#system-overview)
-2. [Repository Structure](#repository-structure)
-3. [Prerequisites](#prerequisites)
-4. [Installation](#installation)
-5. [Dataset Acquisition](#dataset-acquisition)
-6. [Data Preparation](#data-preparation)
-7. [Running the Benchmarks](#running-the-benchmarks)
-8. [Generating Paper Figures and Tables](#generating-paper-figures-and-tables)
-9. [Corrected Tamper-Detection Theory](#corrected-tamper-detection-theory)
-10. [Reproducibility Notes](#reproducibility-notes)
-11. [Experiment Index](#experiment-index)
-12. [Citation](#citation)
+## Selected source batch
 
----
-
-## System Overview
-
-```
-┌────────────────────────────────────────────────────────────┐
-│  Client                                                     │
-│   HMAC-SHA256 trapdoor  ──►  AES-256-GCM posting decrypt   │
-└───────────────────┬────────────────────────────────────────┘
-                    │ encrypted query
-┌───────────────────▼────────────────────────────────────────┐
-│  PrivSearch Server  (Node.js + MongoDB)                     │
-│   Encrypted inverted index  ──►  RSA accumulator check     │
-└───────────────────┬────────────────────────────────────────┘
-                    │ accumulator root + Merkle witness
-┌───────────────────▼────────────────────────────────────────┐
-│  PureChain (external EVM, chain ID 900520900520)            │
-│   Solidity 0.8.24  ·  Hardhat 2.22.19                      │
-└────────────────────────────────────────────────────────────┘
-```
-
-**Key properties:**
-- *Confidentiality* — keyword trapdoors are one-way HMAC-SHA256 tokens; postings are AES-256-GCM encrypted.
-- *Authenticity* — each result set is verified against an RSA accumulator root committed on-chain; tampered results are detected with high probability (Table IX of the manuscript).
-- *Replay resistance* — per-query nonces prevent replayed or stale proofs from being accepted.
-- *Six query families* — `single_keyword`, `AND-k` (k ∈ {2,4,6,8,10}), `OR-2`, `OR-3`, `OR-of-AND`, `fuzzy` (edit distance 1), `range` (calendar window), `semantic` (top-10 concept expansion).
-
----
-
-## Repository Structure
-
-```
-PrivSearch/
-├── scripts/
-│   ├── privsearch/                  # Engine library
-│   │   ├── engines/
-│   │   │   ├── privsearch-prototype-engine.js   # Core PrivSearch engine
-│   │   │   ├── seacq-baseline-engine.js         # SeaCQ baseline
-│   │   │   └── postings-baseline-engine.js      # Plaintext baseline
-│   │   ├── engine-registry.js
-│   │   ├── healthcare-tokenizer.js              # English + Han n-gram tokenizer
-│   │   ├── semantic-lib.js                      # 12-concept semantic expansion
-│   │   └── workload-lib.js
-│   │
-│   ├── prepare-enron*.js            # Enron data preparation pipeline
-│   ├── prepare-healthcare*.js       # Healthcare corpus pipeline
-│   ├── prepare-openfda.js           # openFDA drug/recall pipeline
-│   ├── generate-healthcare-and-workloads.js
-│   │
-│   ├── benchmark-privsearch-workloads.js        # Main Enron latency benchmark
-│   ├── benchmark-privsearch-ablation.js         # Ablation study
-│   ├── benchmark-privsearch-scalability.js      # Scalability sweep
-│   ├── benchmark-privsearch-resource-overhead.js
-│   ├── benchmark-privsearch-witness-profiling.js# RSA witness timing
-│   ├── benchmark-replay-protection.js
-│   ├── benchmark-seacq-headtohead.js            # SeaCQ head-to-head
-│   ├── benchmark-seacq-sample-sweep.js
-│   ├── benchmark-tamper-injection.js            # Tamper detection experiment
-│   ├── benchmark-tamper-small-extra.js
-│   ├── benchmark-security-fuzzing.js
-│   ├── benchmark-stale-proof-rejection.js
-│   ├── benchmark-index-overhead.js
-│   │
-│   ├── analyze-privsearch-crypto-overhead.js
-│   ├── analyze-privsearch-phase-breakdown.js
-│   ├── generate-privsearch-paper-assets.js
-│   ├── generate-privsearch-healthcare-assets.js
-│   ├── generate-privsearch-statistical-rigor.js
-│   ├── generate-final-privsearch-journal-tables.js
-│   ├── generate-privsearch-ieee-pub-figures.py
-│   ├── generate-privsearch-ieee-figures.py
-│   ├── generate-privsearch-requested-figures.py
-│   ├── generate-seacq-style-figure.py
-│   ├── compute_corrected_tamper_table.py        # Corrected p̄_det (Table IX)
-│   ├── fill-seacq-published-columns.js
-│   └── run-seacq-comparison.js
-│
-├── src/                             # TypeScript API server and blockchain layer
-│   ├── access/                      # DID auth, RBAC, field encryption
-│   ├── api/                         # Express server + middleware
-│   ├── blockchain/                  # Chain, consensus, validator, transactions
-│   ├── crud/                        # Document CRUD
-│   ├── schemas/                     # Mongoose schemas
-│   ├── storage/                     # MongoDB, MinIO, IPFS, index engine
-│   └── utils/
-│
-├── NweDB/
-│   ├── enron_query_workloads/       # 310-workload Enron manifest (all families)
-│   └── healthcare/
-│       └── query_workloads/         # Healthcare workload manifest
-│
-├── Results/paper_assets/            # All benchmark output (CSV + JSON + MD)
-│   ├── privsearch_*.csv/json/md     # Main latency, resource, scalability
-│   ├── seacq_*.csv/json/md          # SeaCQ comparison
-│   ├── tamper_*.csv/json            # Tamper injection results
-│   ├── witness_profiling_*.csv/json # RSA witness timing
-│   ├── stale_proof_rejection_*      # Replay / stale proof
-│   ├── security_fuzzing.*           # Fuzzing results
-│   ├── index_overhead.*             # Index storage overhead
-│   ├── *.log                        # Raw run logs
-│   └── figures/                     # Publication figures (PNG + SVG)
-│
-├── PrivSearch_TDSC_Manuscript/      # LaTeX manuscript
-│   ├── main.tex
-│   ├── new_references.bib
-│   ├── sections/                    # Per-section .tex files
-│   ├── pics/                        # All manuscript figures
-│   └── main.pdf                     # Compiled submission PDF
-│
-├── docker-compose.yml               # MongoDB + MinIO services
-├── hardhat.config.js                # PureChain connection
-├── package.json
-└── tsconfig.json
-```
-
----
-
-## Prerequisites
-
-| Component | Version used | Notes |
-|---|---|---|
-| Node.js | v24.15.0 (OpenSSL 3.5.0) | Engine and benchmarks |
-| Python | 3.11.9 | Figure generation, tamper analysis |
-| Docker + Docker Compose | v29.4.0 / v5.1.1 | MongoDB and MinIO services |
-| MongoDB | v7.0.31 (via `mongo:7` image) | Document store |
-| MinIO | RELEASE.2025-09-07T16-13-09Z | Object store |
-| Hardhat | 2.22.19 | PureChain contract deployment |
-| matplotlib, numpy, scipy | latest | Python figure generation |
-
-Install Node.js dependencies:
-```bash
-npm install
-```
-
-Install Python dependencies:
-```bash
-pip install matplotlib numpy scipy
-```
-
----
-
-## Installation
-
-```bash
-git clone git@github.com:Gozie01/PrivSearch-.git
-cd PrivSearch-
-npm install
-cp .env.example .env          # edit .env with your chain RPC and keys
-docker compose up -d          # starts MongoDB (port 27017) and MinIO (port 9000)
-```
-
-### Environment variables (`.env`)
-
-| Variable | Description |
+| Location | Purpose |
 |---|---|
-| `MONGO_URI` | MongoDB connection string (default: `mongodb://localhost:27017/lifedb`) |
-| `MINIO_ENDPOINT` | MinIO endpoint (default: `localhost`) |
-| `MINIO_PORT` | MinIO port (default: `9000`) |
-| `MINIO_ACCESS_KEY` / `MINIO_SECRET_KEY` | MinIO credentials |
-| `CHAIN_RPC_URL` | PureChain EVM RPC endpoint |
-| `DEPLOYER_PRIVATE_KEY` | Private key for contract deployment |
-| `CONTRACT_ADDRESS` | Deployed accumulator contract address (set after `npx hardhat run scripts/deploy-purechain.js`) |
-| `PRIVSEARCH_SECRET` | Master secret for HMAC trapdoor derivation |
+| `contracts/PrivSearchStateAnchor.sol` | Owner-authorized versioned state anchoring |
+| `scripts/privsearch/stage17-*` | Complete-row Merkle authentication, planning, and payload binding |
+| `scripts/privsearch/stage19-*` | Parallel group arithmetic |
+| `scripts/privsearch/stage20-*` and `scripts/benchmark-privsearch-stage20.js` | Live serial/parallel study |
+| Earlier files listed in the release manifest | Frozen dependencies and qualification history required by evidence gates; not alternative current claims |
+| `PrivSearch_Matched_Baseline_v2_Fix1/` | Static comparison against hardened SeaCQ-derived and independently reconstructed DAKS profiles |
+| `PrivSearch_Real_Corpus_Privacy/` | Prior offline query-inference study |
+| `PrivSearch_Privacy_Mitigation_Fix2/` | Fixed private-replica experiment and isolated self-tests |
+| `release/` | Source inventory, verification utility, report catalogue, and packaging notes |
 
----
+The matched package includes its separately pinned `application/` snapshot. This duplication preserves its original relative paths and integrity checks. Superseded standalone Fix1/base privacy and matched packages were not added in this batch.
 
-## Dataset Acquisition
+## Evidence retained in the supplied reports
 
-Large raw datasets are not committed to this repository. Download them separately:
-
-### Enron Email Corpus
-```bash
-# Download from CMU (approx. 432 MB tar.gz)
-wget https://www.cs.cmu.edu/~enron/enron_mail_20150507.tar.gz -P NweDB/
-tar -xzf NweDB/enron_mail_20150507.tar.gz -C NweDB/
-```
-Citation: Klimt & Yang, *ECML 2004*, DOI: [10.1007/978-3-540-30115-8_22](https://doi.org/10.1007/978-3-540-30115-8_22)
-
-### eICU Collaborative Research Database (v2.0.1)
-Access requires credentialing via PhysioNet:
-1. Complete CITI training and register at [physionet.org](https://physionet.org)
-2. Request access to [eICU-CRD v2.0.1](https://physionet.org/content/eicu-crd/2.0.1/)
-3. Download and place CSVs in `NweDB/healthcare/eicu_demo/`
-
-Citation: Pollard et al., *Scientific Data* 5, 180178 (2018), DOI: [10.1038/sdata.2018.178](https://doi.org/10.1038/sdata.2018.178)
-
-### MedCD (TigerResearch)
-```bash
-git clone https://github.com/TigerResearch/MedCD NweDB/healthcare/medcd
-# Use the medcd-annotations split
-```
-Chinese clinical text tokenized with 2–3-gram Han character extraction (see `scripts/privsearch/healthcare-tokenizer.js`).
-
-### openFDA
-```bash
-node scripts/prepare-openfda.js   # downloads drug enforcement, NDC, and recall data
-```
-Snapshot retrieved: 2026-06-15. Endpoints: `/drug/enforcement`, `/drug/ndc`, `/drug/recall`.
-
----
-
-## Data Preparation
-
-Run the preparation scripts in order. Each step is idempotent.
-
-### Enron pipeline
-```bash
-node scripts/prepare-enron.js                  # parse raw mailboxes → JSON documents
-node scripts/prepare-enron-inverted-index.js   # build encrypted inverted index → MongoDB
-node scripts/prepare-enron-keywords.js         # build keyword frequency table
-node scripts/prepare-enron-query-workloads.js  # generate 310-workload manifest
-```
-
-Output: `NweDB/enron_query_workloads/` (workload CSVs and JSONL) — already committed.
-
-### Healthcare pipeline
-```bash
-node scripts/generate-healthcare-and-workloads.js   # combined pipeline for all three sources
-# OR step by step:
-node scripts/prepare-healthcare-datasets.js
-node scripts/prepare-healthcare-inverted-index.js
-node scripts/prepare-healthcare-keywords.js
-node scripts/prepare-healthcare-query-workloads.js
-```
-
-### openFDA pipeline
-```bash
-node scripts/prepare-openfda.js
-```
-
----
-
-## Running the Benchmarks
-
-All benchmarks require a running MongoDB + MinIO (`docker compose up -d`) and a reachable PureChain RPC.
-
-### Main latency benchmark (Enron, all six query families)
-```bash
-node scripts/benchmark-privsearch-workloads.js
-```
-Output: `Results/paper_assets/privsearch_*.csv/json`
-
-### Healthcare corpus benchmark
-```bash
-node scripts/generate-privsearch-healthcare-assets.js
-```
-
-### SeaCQ head-to-head comparison
-```bash
-node scripts/run-seacq-comparison.js
-# or separately:
-node scripts/benchmark-seacq-headtohead.js
-node scripts/benchmark-seacq-sample-sweep.js
-```
-
-### Tamper detection (Table IX)
-```bash
-node scripts/benchmark-tamper-injection.js    # 100 trials × 48 (t, s, bucket) cells
-node scripts/benchmark-tamper-small-extra.js  # additional small-bucket cells
-```
-
-> **Note on PROFILE_TRIALS**: The witness-profiling benchmark uses `PROFILE_TRIALS=1` for 2048-bit RSA to avoid a 12+ hour runtime:
-> ```bash
-> PROFILE_TRIALS=1 node scripts/benchmark-privsearch-witness-profiling.js
-> ```
-
-### Ablation study
-```bash
-node scripts/benchmark-privsearch-ablation.js
-```
-
-### Scalability sweeps
-```bash
-node scripts/benchmark-privsearch-scalability.js
-```
-
-### Replay and stale-proof rejection
-```bash
-node scripts/benchmark-replay-protection.js
-node scripts/benchmark-stale-proof-rejection.js
-```
-
-### Resource overhead and index storage
-```bash
-node scripts/benchmark-privsearch-resource-overhead.js
-node scripts/benchmark-index-overhead.js
-```
-
-### Security fuzzing
-```bash
-node scripts/benchmark-security-fuzzing.js
-```
-
----
-
-## Generating Paper Figures and Tables
-
-```bash
-# Statistical rigor tables (bootstrap CIs, permutation tests)
-node scripts/generate-privsearch-statistical-rigor.js
-
-# Final journal tables (LaTeX-ready)
-node scripts/generate-final-privsearch-journal-tables.js
-
-# Publication figures (IEEE style, PDF + PNG)
-python scripts/generate-privsearch-ieee-pub-figures.py
-python scripts/generate-privsearch-ieee-figures.py
-python scripts/generate-privsearch-requested-figures.py
-python scripts/generate-seacq-style-figure.py
-
-# Healthcare figures
-python PrivSearch_TDSC_Manuscript/pics/figure_02_redrawn/make_fig.py
-```
-
-Pre-generated figures are in `Results/paper_assets/figures/` and `PrivSearch_TDSC_Manuscript/pics/`.
-
----
-
-## Corrected Tamper-Detection Theory
-
-Table IX uses a corrected theoretical detection rate p̄_det that accounts for the nonlinearity of the hypergeometric distribution across workloads. The original approach evaluated p_det at the bucket mean result size, which overestimates detection probability for small-bucket cells. The correction:
-
-```
-p̄_det = (1/P) × Σᵢ p_det(nᵢ, t, s)
-```
-
-where the sum runs over all P eligible workloads in the cell (those with nᵢ > t), using log-space evaluation to avoid large binomial coefficients.
-
-To recompute from the Enron benchmark CSV and the existing tamper JSON:
-
-```bash
-python scripts/compute_corrected_tamper_table.py
-```
-
-This validates that the 7-type Enron filter reconstructs exactly **310 workloads** (140 small + 84 medium + 86 large), prints the full comparison table, and writes `Results/paper_assets/tamper_corrected_theory.json`.
-
----
-
-## Reproducibility Notes
-
-| Parameter | Value |
+| Study | Recorded outcome |
 |---|---|
-| CPU | AMD Ryzen 7 7700 (8c/16t, 3.8 GHz base) |
-| RAM | 32 GB DDR5 |
-| Storage | NVMe SSD (Crucial CT1000T500SSD8, 1 TB PCIe) |
-| OS | Windows 11 Pro 64-bit, build 26200 |
-| Node.js | v24.15.0, OpenSSL 3.5.0 |
-| MongoDB | v7.0.31 (Docker `mongo:7`) |
-| MinIO | RELEASE.2025-09-07T16-13-09Z |
-| Docker | v29.4.0 / Compose v5.1.1 |
-| PureChain | External EVM, chain ID 900520900520 |
-| TypeScript | 5.4.3 |
-| ethers.js | v6.13.5 |
-| CPU freq. scaling | Not controlled (Windows Balanced power plan) |
-| Measurement | Sequential; one HTTP request per trial |
-| Bootstrap CIs | 3,000 resamples; seeds 314,159 (flat), 271,828 (hierarchical) |
-| Permutation tests | 10,000 resamples, two-sided; seed 42 |
-| Tamper trials | 100 per (t, s, bucket) cell; OS entropy via `crypto.randomBytes()` |
+| Stage20 live serial/parallel | 960 measured attempts; 959 verified and one failure; 319 successful measurement pairs with identical normalized packets |
+| Matched static comparison | 900 measured attempts and 90 excluded warmups; completion status `MATCHED_STATIC_IMPLEMENTATION_COMPARISON_COMPLETE` |
+| Private-replica study | 1,584 completed successful experiment cells, 792 per mode; this is experiment completion, not proof of inference resistance |
 
-Run logs for all major experiments are in `Results/paper_assets/*.log`.
+`release/report-catalogue.json` records original summary hashes and selected accounting fields. It is a derived catalogue, not a substitute for the original evidence files accepted by the runners' exact-hash gates. Raw report summaries, datasets, returned records, secrets, and local environment files are not published by this batch. Real runs require original source data and the approved evidence directories; do not edit pins or bypass gates to accommodate missing inputs.
 
----
+The manuscript's 103 expressive cases are not claimed as newly reproduced by this release: the standalone expressive-validation implementation was not supplied. The committed planning implementation and its tests are included.
 
-## Experiment Index
+## Environment
 
-| Experiment | Script | Output | Paper section |
-|---|---|---|---|
-| Main Enron latency | `benchmark-privsearch-workloads.js` | `privsearch_extension_summary.*` | §5A |
-| Healthcare latency | `generate-privsearch-healthcare-assets.js` | `privsearch_healthcare_phase_breakdown.*` | §5B |
-| Ablation | `benchmark-privsearch-ablation.js` | `privsearch_ablation_results.*` | §5C |
-| SeaCQ head-to-head | `benchmark-seacq-headtohead.js` | `seacq_headtohead_enron.*` | §5D |
-| Scalability (postings) | `benchmark-privsearch-scalability.js` | `privsearch_scalability_postings.csv` | §5E |
-| Scalability (clauses) | `benchmark-privsearch-scalability.js` | `privsearch_scalability_clause_count.csv` | §5E |
-| Scalability (corpus) | `benchmark-privsearch-scalability.js` | `privsearch_scalability_corpus.csv` | §5E |
-| Resource overhead | `benchmark-privsearch-resource-overhead.js` | `privsearch_resource_overhead_results.*` | §5F |
-| Crypto overhead | `analyze-privsearch-crypto-overhead.js` | `privsearch_crypto_overhead_results.*` | §5F |
-| Tamper detection | `benchmark-tamper-injection.js` | `tamper_injection.*` | §5G |
-| RSA witness profiling | `benchmark-privsearch-witness-profiling.js` | `witness_profiling_enron.*` | §5H |
-| Replay / stale proof | `benchmark-replay-protection.js` | `privsearch_replay_protection.*` | §5I |
-| Security fuzzing | `benchmark-security-fuzzing.js` | `security_fuzzing.*` | §5J |
-| Index overhead | `benchmark-index-overhead.js` | `index_overhead.*` | §5K |
-| Statistical rigor | `generate-privsearch-statistical-rigor.js` | `privsearch_statistical_rigor.*` | §5L |
+Reported Windows evaluation host: AMD Ryzen 7 7700 (8 cores/16 threads), 32 GiB RAM, Windows 11 Pro 25H2 build 26200.9711; project on a Crucial CT1000T500SSD8 NVMe SSD. Docker volume physical placement and Docker-wide resource limits were not confirmed.
 
----
+| Component | Reported version or boundary |
+|---|---|
+| Live Node.js / libuv | v24.22.0 / v1.52.1 |
+| Matched Node.js | v24.15.0 |
+| DAKS Python / PyCryptodome | v3.10.11 / v3.23.0, native P256 |
+| MongoDB | v7.0.31, separate Linux Docker container |
+| MinIO | RELEASE.2025-09-07T16-13-09Z, separate Linux Docker container |
+| Container limits | No explicit per-container CPU or memory limits; persistent Docker volumes |
+| PureChain | Chain ID 900520900520; consensus, validator count, and host placement remain unconfirmed |
 
-## Citation
+A subsequent RPC diagnostic reported `PureChain/PureChain-Idle-Hub/v1.13.15-purechain-1.0.1-e797061c-20261013/linux-amd64/go1.21.12`; this is not independently established as the historical version for every measured run.
 
-If you use this code or data, please cite:
+The reader's default RPC transport timeout is 15 s. Its bounded policy allows at most three whole-observation attempts with 250 ms delay for specified block/header errors. It does not retry whole queries or fall back to a weaker selector/finality policy. The intervening RPC gate and provider topology must be considered separately.
 
-```bibtex
-@article{Nadiekwe2026PrivSearch,
-  author  = {Chigozie Nadiekwe},
-  title   = {{PrivSearch}: Privacy-Preserving Authenticated Search
-             with {RSA} Accumulators for Hybrid Blockchain Systems},
-  journal = {IEEE Transactions on Dependable and Secure Computing},
-  year    = {2026},
-  note    = {Under review}
-}
+`package-lock.json` pins the supplied dependency snapshot. Its versions are dependency records, not proof of which modules were loaded in past measurements. The package and lockfile dependency declarations agree.
+
+## Verify and run synthetic checks
+
+```sh
+git clone https://github.com/Gozie01/PrivSearch1.git
+cd PrivSearch1
+python release/verify_release.py
 ```
 
----
+The core synthetic checks below use Node's built-in test runner and do not require live service credentials:
 
-## License
+```sh
+node --test scripts/test-privsearch-stage19.js
+node --test scripts/test-privsearch-stage20.js
+python PrivSearch_Matched_Baseline_v2_Fix1/verify-package.py
+python -m unittest discover -s PrivSearch_Matched_Baseline_v2_Fix1 -p "test*.py"
+```
 
-Source code is released under the MIT License.
-Benchmark data and manuscript figures are released under CC BY 4.0.
-The Enron email corpus and eICU database are subject to their own terms of use — consult their respective sources before redistribution.
+Run the privacy self-tests from the repository root in PowerShell:
+
+```powershell
+$env:PRIVSEARCH_PRIVACY_PROJECT_ROOT = (Get-Location).Path
+node --test --test-reporter=tap .\PrivSearch_Privacy_Mitigation_Fix2\test-mitigation.js
+Remove-Item Env:PRIVSEARCH_PRIVACY_PROJECT_ROOT
+```
+
+The privacy test harness enforces synthetic-source isolation. Do not disable it. Running its PowerShell study wrapper is a separate real-corpus operation, not just a test.
+
+For live services, install the supplied locked Node dependencies with `npm ci` and provision MongoDB, MinIO, and the appropriate owner/client RPC configuration separately. Never commit private keys or `.env` files. Read `scripts/preflight-privsearch-stage1.js` for the exact supported configuration rather than reusing the obsolete environment-variable table from the previous README.
+
+## Real-data reproduction
+
+Live execution requires audited Enron/healthcare source collections, an existing MinIO bucket, approved authority pins, the deployed contract, authorized owner signing material, and the exact approved prior report directories. Source-selection and cryptographic-preparation costs are distinct from warmed query timing. Obtain source datasets under their own terms; the repository does not grant redistribution rights.
+
+The live command accepts explicit evidence directories:
+
+```sh
+node scripts/benchmark-privsearch-stage20.js --stage19 PATH_TO_APPROVED_STAGE19_REPORT --stage18 PATH_TO_APPROVED_STAGE18_REPORT
+```
+
+Consult the runner's parser and its evidence gates for other required paths/configuration. Successful synthetic checks do not reproduce live timings.
+
+For the matched experiment, read `PrivSearch_Matched_Baseline_v2_Fix1/README.md` and pass your project, audit, Node, and Python paths explicitly when using its Windows wrapper. PyCryptodome 3.23.0 is required for the native DAKS arithmetic. For privacy, read `PrivSearch_Privacy_Mitigation_Fix2/README.md`; select `--fixture`, `--evidence-only`, or `--real-corpus` explicitly. Evidence-only validation is not experiment completion.
+
+## Interpretation
+
+The comparison aligns selected records, static predicates, original output bytes, and charged local work. The profiles differ in leakage, trust, runtimes, and cryptographic parameter strengths. They do not establish equal-security superiority over the published SeaCQ or DAKS protocols. Matched timings exclude live storage, transport, and chain observation. Live results use a single application host and loopback HTTP; small-query concurrency is not wide-conjunction throughput. Full-vocabulary scalability and WAN deployment performance are not established.
+
+Lower measured native client-stage time can coexist with larger responses and slower total queries. Complete posting verification has posting-dependent communication and computation costs. The private replica trades selective remote requests for full bootstrap and client storage.
+
+## Publication and licensing
+
+This README does not assert journal submission or acceptance status. Cite the final published article or an identified preprint when available. The previous README's statement of MIT/CC BY licensing was not backed by supplied licence files; this update does not grant or change licences. Review applicable project and third-party terms before reuse or redistribution.

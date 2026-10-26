@@ -1,0 +1,120 @@
+{
+  "schema": "privsearch-stage15-reviewed-pins-1",
+  "stage14_summary_sha256": "f98211881a0834fc6e9ec9b0bac29098dc22dda373038c5d33fe08d5bb090346",
+  "stage14_run_id": "4d8e78cf-7757-4420-a9fd-dd4500d2cda1",
+  "deployed_pins": {
+    "chainId": "900520900520",
+    "genesisHash": "afafa8c09261b056bcf4224d1b0eb87e38ec57f0f6ab36cfc0ca6548f31a576e",
+    "contract": "0xa01ffb67c4a7a0d655776598d6e93d1518567a19",
+    "owner": "0x436a09753d6137beaf731234d72827ac7900d0d1",
+    "codeHash": "7e8da336053fe5c0f4f9885a8d93319b48752b5276b6763d2ca161c38a68cf0a",
+    "finality": {
+      "kind": "confirmations",
+      "depth": 1
+    },
+    "blockSelector": "eip1898"
+  },
+  "queries": {
+    "healthcare": [
+      {
+        "name": "Q000289",
+        "family": "and_10",
+        "result_count": 797
+      },
+      {
+        "name": "Q000283",
+        "family": "and_8",
+        "result_count": 797
+      },
+      {
+        "name": "Q000279",
+        "family": "and_6",
+        "result_count": 950
+      },
+      {
+        "name": "Q000274",
+        "family": "and_4",
+        "result_count": 1223
+      },
+      {
+        "name": "Q000254",
+        "family": "and_2",
+        "result_count": 1285
+      },
+      {
+        "name": "Q000257",
+        "family": "and_2",
+        "result_count": 1653
+      },
+      {
+        "name": "Q000001",
+        "family": "single_keyword",
+        "result_count": 20
+      },
+      {
+        "name": "G_prepared_empty",
+        "family": "prepared_empty",
+        "result_count": 0
+      },
+      {
+        "name": "G_disjoint_and",
+        "family": "and_2_zero",
+        "result_count": 0
+      }
+    ],
+    "enron": [
+      {
+        "name": "Q000163",
+        "family": "and_2",
+        "result_count": 28
+      },
+      {
+        "name": "Q000156",
+        "family": "and_2",
+        "result_count": 15
+      },
+      {
+        "name": "Q000001",
+        "family": "single_keyword",
+        "result_count": 20
+      },
+      {
+        "name": "G_prepared_empty",
+        "family": "prepared_empty",
+        "result_count": 0
+      },
+      {
+        "name": "G_disjoint_and",
+        "family": "and_2_zero",
+        "result_count": 0
+      }
+    ]
+  },
+  "source_scope": {
+    "healthcare": {
+      "source_records": 281042,
+      "source_keyword_assignments": 5921041,
+      "projected_documents": 8364,
+      "projected_keyword_assignments": 27717,
+      "prepared_keywords": 25,
+      "projected_payload_bytes": 11840296,
+      "audit_summary_sha256": "1ba4a7fd21687e095606077013790919548e2037875635dac5267adf5ee6ed19",
+      "audit_catalog_sha256": "440f97d1f21486296495f455ef03f749b9f38317f14e990d4c4fc703ad3d5fd9"
+    },
+    "enron": {
+      "source_records": 517401,
+      "source_keyword_assignments": 42506745,
+      "projected_documents": 7726,
+      "projected_keyword_assignments": 8325,
+      "prepared_keywords": 15,
+      "projected_payload_bytes": 218037112,
+      "audit_summary_sha256": "1ba4a7fd21687e095606077013790919548e2037875635dac5267adf5ee6ed19",
+      "audit_catalog_sha256": "aa62ceff356b68affc410927f500d0ff1c2c7155824f1edf0abf6b81398168df"
+    }
+  },
+  "baseline_label": "SeaCQ-basic-derived with a shared anchored payload retrieval layer",
+  "published_seacq_comparison_qualified": false,
+  "daks_comparison_qualified": false,
+  "full_dynamic_seacq": false,
+  "paper_privacy_equivalence_established": false
+}

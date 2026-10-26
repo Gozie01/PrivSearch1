@@ -1,0 +1,12 @@
+{
+  "matched_original_package_manifest_sha256": "76d2be7a18f568793e4b88a4e6176dfcd27957a515b43d32093f0e64131179db",
+  "omitted_unsupplied_archival_logs": [
+    "evidence/actual-new-controls.log",
+    "evidence/runner-regression.log"
+  ],
+  "reason": "Collector omitted .log files; no runtime implementation changed. Manifest now enumerates files actually supplied.",
+  "privacy_original_manifest_sha256": "2e969737a88a3cca54e8d71b2f890827a2ac09b1b3aa490a6ad21e5086f1f7f7",
+  "privacy_omitted_unsupplied_archival_logs": [
+    "builder-tests.tap"
+  ]
+}

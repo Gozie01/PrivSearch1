@@ -1,0 +1,14 @@
+{
+  "schema": "privsearch-stage7-approved-calibration-pins-1",
+  "stage6_summary_sha256": "ea15192fd333549b8e65ba8d1aa0c70d3539b75f674fe3cfe0255a7adec7f252",
+  "stage6_archive_sha256": "98482a0f8e3ea188328523615cf65aeeb8b431bc4999eb79416ba48f8bb78a1d",
+  "run_id": "4d0d010f-b2d1-424e-af5c-1f00e5a8fb2e",
+  "stage5_summary_sha256": "1ba4a7fd21687e095606077013790919548e2037875635dac5267adf5ee6ed19",
+  "stage6_counts": {
+    "attempts": 214,
+    "verified": 214,
+    "transport_limited": 0,
+    "failed": 0
+  },
+  "core_reference_sha256": "86842cd1e0f8548454cf87ab08457619cf08910ad3382bc96d3716052716de11"
+}

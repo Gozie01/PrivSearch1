@@ -1,0 +1,7 @@
+{
+  "schema": "privsearch-stage8-approved-optimization-1",
+  "stage7_summary_sha256": "b28a10bbafcf4206cc20e7575ca75633bfc05c81c758e1986addfbe8de1a0012",
+  "stage7_run_id": "be51af99-9232-490c-88b3-c92bfb82c1b8",
+  "optimized_core_sha256": "6a0ac88500abc5cbc3ce593e7f4c83ed938b1cf4b53b7faa124ead1eeb3e5b81",
+  "original_core_sha256": "86842cd1e0f8548454cf87ab08457619cf08910ad3382bc96d3716052716de11"
+}

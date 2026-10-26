@@ -1,0 +1,10 @@
+{
+  "schema": "privsearch-stage13-pins-1",
+  "stage12_summary_sha256": "9ca8fe04d89c9518d097704d4107a8b5fde93de1bf1a49a856c0226e3e454195",
+  "stage12_report_suffix": "39fbae33",
+  "stage12_status": "STAGE12_QUALIFICATION_COMPLETE_COMPARISON_BLOCKED",
+  "profile": "seacq-basic-derived-hardened-identifiers",
+  "source_paper_doi": "10.1109/TKDE.2025.3622591",
+  "relation": "Clean implementation of the basic aggregated-keyword-product/member-and-nonmember verification pattern with explicitly documented hardening and identifier transport adaptations; not author code or full dynamic SeaCQ.",
+  "author_repository_commit": "6e70dc8dd3304b5426f3c68bae0ff96bd90583b6"
+}

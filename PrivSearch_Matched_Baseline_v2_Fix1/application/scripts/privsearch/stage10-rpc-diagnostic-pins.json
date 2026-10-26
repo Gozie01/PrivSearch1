@@ -1,0 +1,6 @@
+{
+  "schema": "privsearch-stage10-rpc-diagnostic-pins-1",
+  "summary_sha256": "8b165af71ce6fb36124e78dba28cfc849be24c5e258fcf5ecea6edf7facd7afa",
+  "run_id": "255d7b59-4612-40bf-a03c-a568402fd601",
+  "expected_status": "STAGE10_REAL_CORPUS_UPDATES_FRESHNESS_STOPPED"
+}

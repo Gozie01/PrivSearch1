@@ -1,0 +1,53 @@
+{
+  "schema": "privsearch-stage12-approved-pins-1",
+  "repository": "https://github.com/XJTUOSV-SSEer/SeaCQ",
+  "commit": "6e70dc8dd3304b5426f3c68bae0ff96bd90583b6",
+  "stage11_summary_sha256": "76495adc918efd6a490473138b93c0507102cef2765e32ec95601d1991a0690d",
+  "stage11_run_id": "03bdbe96-3848-4395-954a-c0a5dfac5c05",
+  "author_files": {
+    "README.md": "145d77cb3b68aee5866bd6d691dab3c9390efffdbf1b50a97d63f84c94f526bc",
+    "contract/contracts/io.sol": "ae5dc88c86a106237a22f6a151684361d4c7494d21f5ee361431ffd94a0daef9",
+    "SeaCQ/owner.py": "2dfe76f4d9fcb043c9f02c9ea2bc145582891257a4ea2a396c8c77f48f033832",
+    "SeaCQ/server.py": "d615c87bb53ad77f05ebc48367b70088c7c8502def2eaf3842670a29b88f4b99",
+    "SeaCQ/Accumulator.py": "06854589dd898c3716c10081207b816f3318f5fd257644af2de49ca43b1f6807",
+    "SeaCQ/numbthy.py": "edcfeb9db819ba7a77562be0d29424e9a0287cff7449cf6f2cdebedc6273c7fb",
+    "FB-SeaCQ/owner.py": "d9fcde8e6cdfcfa67fe59a24eb8ea5c9f814308ae1d0a36f4cc2aedf3e281edd",
+    "FB-SeaCQ/server.py": "f3a83c03f3ae225c189a8aa2dc55f07250f85067b99f8c49184f8cefd99d7b99",
+    "FB-SeaCQ/Accumulator.py": "4fc5cfb843cccdea34ab9ae69c5152c242ca0ae2902efa1b3d540dd9e9b1c80d",
+    "FB-SeaCQ/numbthy.py": "edcfeb9db819ba7a77562be0d29424e9a0287cff7449cf6f2cdebedc6273c7fb"
+  },
+  "daks": {
+    "doi": "10.1016/j.future.2024.01.026",
+    "source_status": "FULL_SPECIFICATION_AND_AUTHOR_IMPLEMENTATION_NOT_RESOLVED",
+    "publisher": "https://www.sciencedirect.com/science/article/abs/pii/S0167739X24000323"
+  },
+  "author_probe_dependencies": [
+    "pycryptodome==3.23.0",
+    "setuptools==80.9.0"
+  ],
+  "excluded_legacy_engine": {
+    "path": "scripts/privsearch/engines/seacq-baseline-engine.js",
+    "reviewed_sha256": "ea8cc1fdb2abfe70a5277682562d3d70f48b5823b3d4233010e4f01237270282",
+    "classification": "LOCAL_PROXY_NOT_AUTHOR_SEACQ",
+    "reason": "Locally shared keys/index/witness cache; no independent block-coherent chain release gate; expected result count used as a verification input. Cannot substitute for the author construction."
+  },
+  "sources": [
+    {
+      "title": "SeaCQ: Secure and Efficient Authenticated Conjunctive Query in Hybrid-Storage Blockchains",
+      "doi": "10.1109/TKDE.2025.3622591",
+      "url": "https://ieeexplore.ieee.org/document/11205976",
+      "reviewed_scope": "User-supplied full extracted paper, construction Sections IV-A, IV-B and V; experimental repository reviewed separately."
+    },
+    {
+      "title": "Author repository",
+      "url": "https://github.com/XJTUOSV-SSEer/SeaCQ",
+      "commit": "6e70dc8dd3304b5426f3c68bae0ff96bd90583b6"
+    },
+    {
+      "title": "Dynamic authenticated keyword search in hybrid-storage blockchain",
+      "doi": "10.1016/j.future.2024.01.026",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0167739X24000323",
+      "reviewed_scope": "Publisher abstract and section preview only; full CMPS construction and attributable source unresolved."
+    }
+  ]
+}

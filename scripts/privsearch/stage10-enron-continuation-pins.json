@@ -1,0 +1,13 @@
+{
+  "schema": "privsearch-stage10-enron-continuation-pins-1",
+  "healthcare": {
+    "summary_sha256": "8b165af71ce6fb36124e78dba28cfc849be24c5e258fcf5ecea6edf7facd7afa",
+    "run_id": "255d7b59-4612-40bf-a03c-a568402fd601",
+    "status": "STAGE10_REAL_CORPUS_UPDATES_FRESHNESS_STOPPED"
+  },
+  "diagnostic": {
+    "summary_sha256": "dfd0a5abfd6c733eba30c08cf5c9931cb6ae1f1e445acc4f89bcebb04feaa090",
+    "run_id": null,
+    "status": "RPC_CANONICAL_READS_CONSISTENT_IN_DIAGNOSTIC_WINDOW"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "runtime": {
+    "node": "v24.22.1",
+    "platform": "Linux"
+  },
+  "application_frozen_hashes": 193,
+  "javascript_syntax_checked": 353,
+  "stage20_tests": {
+    "passed": 10,
+    "failed": 0
+  },
+  "privacy_replica_tests": {
+    "passed": 25,
+    "failed": 0
+  },
+  "matched_python_tests": {
+    "passed": 13,
+    "failed": 0
+  },
+  "live_experiments_rerun": false,
+  "notes": [
+    "Synthetic checks do not remeasure historical live timings.",
+    "Historical report outcomes are recorded in report-catalogue.json.",
+    "Package inventories omit three unsupplied archival test logs; runtime source is unchanged."
+  ],
+  "stage19_tests": {
+    "passed": 13,
+    "failed": 0
+  }
+}
